@@ -1,0 +1,5 @@
+# Ignore kits19/data
+kits19/data/
+
+# Ignore specific file in TransUNet
+TransUNet/model/vit_checkpoint/imagenet21k/imagenet21k_R50+ViT-B_16.npz

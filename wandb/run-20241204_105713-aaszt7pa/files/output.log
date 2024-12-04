@@ -1,0 +1,18 @@
+Namespace(base_lr=0.01, batch_size=4, dataset='KiTS19', deterministic=1, exp='TU_KiTS19_224', img_size=224, list_dir='./lists_kits19', max_epochs=100, max_iterations=30000, n_gpu=1, n_skip=3, num_classes=3, root_path='kits19/data', seed=1234, vit_name='R50-ViT-B_16', vit_patches_size=16)
+18375 iterations per epoch. 1837500 max iterations.
+  0%|                                         | 0/100 [00:00<?, ?it/s]
+Iteration 1: Loss 0.9277, Loss_CE 1.1006
+Iteration 2: Loss 0.8958, Loss_CE 1.0111
+Iteration 3: Loss 0.8094, Loss_CE 0.8804
+Iteration 4: Loss 0.7221, Loss_CE 0.7098
+Iteration 5: Loss 0.6261, Loss_CE 0.5563
+Iteration 6: Loss 0.5516, Loss_CE 0.4174
+Iteration 7: Loss 0.4940, Loss_CE 0.3409
+Iteration 8: Loss 0.4541, Loss_CE 0.2309
+Iteration 9: Loss 0.4195, Loss_CE 0.1749
+Iteration 10: Loss 0.3858, Loss_CE 0.1537
+Iteration 11: Loss 0.3819, Loss_CE 0.0947
+Iteration 12: Loss 0.3688, Loss_CE 0.0818
+Iteration 13: Loss 0.3927, Loss_CE 0.1390
+Iteration 14: Loss 0.3579, Loss_CE 0.0606
+Iteration 15: Loss 0.3560, Loss_CE 0.0550

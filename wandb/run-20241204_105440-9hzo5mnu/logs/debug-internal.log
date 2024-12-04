@@ -1,0 +1,19 @@
+{"time":"2024-12-04T10:54:40.495229887+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-04T10:54:40.495300338+01:00","level":"INFO","msg":"created symlink","path":"/home/hous/Desktop/Kidney_Segmentation/wandb/run-20241204_105440-9hzo5mnu/logs/debug-core.log"}
+{"time":"2024-12-04T10:54:40.612353406+01:00","level":"INFO","msg":"created new stream","id":"9hzo5mnu"}
+{"time":"2024-12-04T10:54:40.612424814+01:00","level":"INFO","msg":"stream: started","id":"9hzo5mnu"}
+{"time":"2024-12-04T10:54:40.61256683+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"9hzo5mnu"}
+{"time":"2024-12-04T10:54:40.612635753+01:00","level":"INFO","msg":"sender: started","stream_id":"9hzo5mnu"}
+{"time":"2024-12-04T10:54:40.612613001+01:00","level":"INFO","msg":"handler: started","stream_id":"9hzo5mnu"}
+{"time":"2024-12-04T10:54:41.270176027+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-04T10:55:58.558930929+01:00","level":"INFO","msg":"stream: closing","id":"9hzo5mnu"}
+{"time":"2024-12-04T10:55:58.559616506+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-04T10:55:58.562125441+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-04T10:55:58.810824043+01:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2024-12-04T10:55:58.810835575+01:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2024-12-04T10:55:58.810838379+01:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2024-12-04T10:55:59.419247778+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-04T10:55:59.786725054+01:00","level":"INFO","msg":"handler: closed","stream_id":"9hzo5mnu"}
+{"time":"2024-12-04T10:55:59.786741952+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"9hzo5mnu"}
+{"time":"2024-12-04T10:55:59.786760139+01:00","level":"INFO","msg":"sender: closed","stream_id":"9hzo5mnu"}
+{"time":"2024-12-04T10:55:59.786781038+01:00","level":"INFO","msg":"stream: closed","id":"9hzo5mnu"}

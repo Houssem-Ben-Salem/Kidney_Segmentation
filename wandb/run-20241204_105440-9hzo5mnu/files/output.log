@@ -1,0 +1,27 @@
+Namespace(base_lr=0.01, batch_size=8, dataset='KiTS19', deterministic=1, exp='TU_KiTS19_224', img_size=224, list_dir='./lists_kits19', max_epochs=100, max_iterations=30000, n_gpu=1, n_skip=3, num_classes=3, root_path='kits19/data', seed=1234, vit_name='R50-ViT-B_16', vit_patches_size=16)
+9188 iterations per epoch. 918800 max iterations.
+  0%|                                         | 0/100 [01:08<?, ?it/s]
+Traceback (most recent call last):
+  File "TransUNet/train.py", line 85, in <module>
+    trainer_kits19(args, net, snapshot_path)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 104, in trainer_kits19
+    outputs = model(image_batch)
+  File "/home/hous/anaconda3/envs/myenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 389, in forward
+    x = self.decoder(x, features)
+  File "/home/hous/anaconda3/envs/myenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 366, in forward
+    x = decoder_block(x, skip=skip)
+  File "/home/hous/anaconda3/envs/myenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 310, in forward
+    x = self.up(x)
+  File "/home/hous/anaconda3/envs/myenv/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/hous/anaconda3/envs/myenv/lib/python3.7/site-packages/torch/nn/modules/upsampling.py", line 131, in forward
+    return F.interpolate(input, self.size, self.scale_factor, self.mode, self.align_corners)
+  File "/home/hous/anaconda3/envs/myenv/lib/python3.7/site-packages/torch/nn/functional.py", line 2530, in interpolate
+    return torch._C._nn.upsample_bilinear2d(input, _output_size(2), align_corners)
+RuntimeError: CUDA out of memory. Tried to allocate 14.00 MiB (GPU 0; 3.63 GiB total capacity; 2.80 GiB already allocated; 10.94 MiB free; 2.92 GiB reserved in total by PyTorch)
