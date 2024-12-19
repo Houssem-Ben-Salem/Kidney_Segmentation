@@ -191,7 +191,6 @@ Segmentation outputs and attention maps are logged to W&B for qualitative compar
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for more details.
-```
 
 ### Highlights:
 1. **Clear Sections**:
