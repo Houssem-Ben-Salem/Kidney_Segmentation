@@ -1,4 +1,3 @@
-```markdown
 # Kidney Tumor Segmentation using TransUNet with Attention Gate
 
 This project implements kidney tumor segmentation using the **TransUNet** architecture enhanced with **Attention Gates** for improved segmentation performance. It utilizes the **KiTS19** dataset for training and testing. The implementation is designed for flexibility and includes features like attention visualization, checkpointing, and integration with **Weights & Biases (W&B)** for experiment tracking.
