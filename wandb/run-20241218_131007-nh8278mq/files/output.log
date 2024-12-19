@@ -1,0 +1,127 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits1', use_attention=1, exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+73500 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:00<?, ?it/s]
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 1: Loss 0.9399
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 2: Loss 0.8905
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 3: Loss 0.8143
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 4: Loss 0.7220
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 5: Loss 0.6320
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 6: Loss 0.5539
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 7: Loss 0.4963
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 8: Loss 0.4510
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 9: Loss 0.4207
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 10: Loss 0.3974
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 11: Loss 0.4415
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 12: Loss 0.3717
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 13: Loss 0.3867
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 14: Loss 0.3566
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 15: Loss 0.4334
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 16: Loss 0.3520
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 17: Loss 0.3468
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 18: Loss 0.3449
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 19: Loss 0.3632
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+Iteration 20: Loss 0.4167
+DecoderBlock Input Shape: torch.Size([1, 512, 14, 14]), Skip Shape: torch.Size([1, 512, 28, 28])
+DecoderBlock Input Shape: torch.Size([1, 256, 28, 28]), Skip Shape: torch.Size([1, 256, 56, 56])
+DecoderBlock Input Shape: torch.Size([1, 128, 56, 56]), Skip Shape: torch.Size([1, 64, 112, 112])
+DecoderBlock Input Shape: torch.Size([1, 64, 112, 112]), Skip Shape: None
+  0%|                                       | 0/50000 [00:15<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 120, in trainer_kits19
+    for sampled_batch in train_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

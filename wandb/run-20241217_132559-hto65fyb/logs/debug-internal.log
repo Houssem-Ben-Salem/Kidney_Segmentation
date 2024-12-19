@@ -1,0 +1,952 @@
+2024-12-17 13:25:59,333 INFO    StreamThr :40875 [internal.py:wandb_internal():85] W&B internal server running at pid: 40875, started at: 2024-12-17 13:25:59.333334
+2024-12-17 13:25:59,335 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status
+2024-12-17 13:25:59,337 INFO    WriterThread:40875 [datastore.py:open_for_write():87] open: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/run-hto65fyb.wandb
+2024-12-17 13:25:59,337 DEBUG   SenderThread:40875 [sender.py:send():391] send: header
+2024-12-17 13:25:59,340 DEBUG   SenderThread:40875 [sender.py:send():391] send: run
+2024-12-17 13:25:59,903 INFO    SenderThread:40875 [dir_watcher.py:__init__():211] watching files in: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files
+2024-12-17 13:25:59,904 INFO    SenderThread:40875 [sender.py:_start_run_threads():1200] run started: hto65fyb with start time 1734438359.335202
+2024-12-17 13:25:59,918 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: check_version
+2024-12-17 13:25:59,918 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: check_version
+2024-12-17 13:26:00,111 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: run_start
+2024-12-17 13:26:00,120 DEBUG   HandlerThread:40875 [system_info.py:__init__():26] System info init
+2024-12-17 13:26:00,120 DEBUG   HandlerThread:40875 [system_info.py:__init__():41] System info init done
+2024-12-17 13:26:00,120 INFO    HandlerThread:40875 [system_monitor.py:start():194] Starting system monitor
+2024-12-17 13:26:00,120 INFO    SystemMonitor:40875 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-12-17 13:26:00,120 INFO    HandlerThread:40875 [system_monitor.py:probe():214] Collecting system info
+2024-12-17 13:26:00,121 INFO    SystemMonitor:40875 [interfaces.py:start():188] Started cpu monitoring
+2024-12-17 13:26:00,121 INFO    SystemMonitor:40875 [interfaces.py:start():188] Started disk monitoring
+2024-12-17 13:26:00,122 INFO    SystemMonitor:40875 [interfaces.py:start():188] Started gpu monitoring
+2024-12-17 13:26:00,123 INFO    SystemMonitor:40875 [interfaces.py:start():188] Started memory monitoring
+2024-12-17 13:26:00,124 INFO    SystemMonitor:40875 [interfaces.py:start():188] Started network monitoring
+2024-12-17 13:26:00,137 DEBUG   HandlerThread:40875 [system_info.py:probe():152] Probing system
+2024-12-17 13:26:00,139 DEBUG   HandlerThread:40875 [system_info.py:_probe_git():137] Probing git
+2024-12-17 13:26:00,146 DEBUG   HandlerThread:40875 [system_info.py:_probe_git():145] Probing git done
+2024-12-17 13:26:00,146 DEBUG   HandlerThread:40875 [system_info.py:probe():200] Probing system done
+2024-12-17 13:26:00,146 DEBUG   HandlerThread:40875 [system_monitor.py:probe():223] {'os': 'Linux-6.8.0-49-generic-x86_64-with-glibc2.35', 'python': '3.10.9', 'heartbeatAt': '2024-12-17T12:26:00.137730', 'startedAt': '2024-12-17T12:25:59.329900', 'docker': None, 'cuda': None, 'args': ('--dataset', 'KiTS19', '--img_size', '224', '--batch_size', '1', '--max_iterations', '50000', '--num_classes', '3', '--checkpoint_dir', './checkpoints_kits19'), 'state': 'running', 'program': '/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py', 'codePathLocal': 'TransUNet/train.py', 'codePath': 'TransUNet/train.py', 'git': {'remote': 'https://github.com/Houssem-Ben-Salem/Kidney_Segmentation.git', 'commit': '51e158f300f5b3ccee4baf04d6cb5ed43ab0b531'}, 'email': 'boumaiza.ghaith.pr@gmail.com', 'root': '/home/hous/Desktop/Kidney_Segmentation', 'host': 'HOUS-GF63-Thin-10SCSR', 'username': 'hous', 'executable': '/home/hous/anaconda3/envs/torch/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.199750000000001, 'min': 800.0, 'max': 5000.0}, 'cpu_freq_per_core': [{'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.198, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}], 'disk': {'/': {'total': 467.8899917602539, 'used': 416.4673881530762}}, 'gpu': 'NVIDIA GeForce GTX 1650 Ti with Max-Q Design', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1650 Ti with Max-Q Design', 'memory_total': 4294967296}], 'memory': {'total': 23.235435485839844}}
+2024-12-17 13:26:00,146 INFO    HandlerThread:40875 [system_monitor.py:probe():224] Finished collecting system info
+2024-12-17 13:26:00,146 INFO    HandlerThread:40875 [system_monitor.py:probe():227] Publishing system info
+2024-12-17 13:26:00,147 DEBUG   HandlerThread:40875 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-12-17 13:26:00,904 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/conda-environment.yaml
+2024-12-17 13:26:12,907 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/conda-environment.yaml
+2024-12-17 13:26:12,941 DEBUG   HandlerThread:40875 [system_info.py:_save_conda():224] Saving conda packages done
+2024-12-17 13:26:12,942 INFO    HandlerThread:40875 [system_monitor.py:probe():229] Finished publishing system info
+2024-12-17 13:26:12,960 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:12,960 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-17 13:26:12,960 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:12,960 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-17 13:26:12,961 DEBUG   SenderThread:40875 [sender.py:send():391] send: files
+2024-12-17 13:26:12,961 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-metadata.json with policy now
+2024-12-17 13:26:13,738 INFO    wandb-upload_0:40875 [upload_job.py:push():130] Uploaded file /tmp/tmp055ikzbewandb/omc0rflp-wandb-metadata.json
+2024-12-17 13:26:13,908 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-metadata.json
+2024-12-17 13:26:14,475 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: python_packages
+2024-12-17 13:26:14,475 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:26:14,475 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: python_packages
+2024-12-17 13:26:14,476 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:26:14,478 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:14,712 DEBUG   SenderThread:40875 [sender.py:send():391] send: telemetry
+2024-12-17 13:26:14,908 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/requirements.txt
+2024-12-17 13:26:15,475 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:15,712 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:16,476 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:17,573 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:17,592 DEBUG   SenderThread:40875 [sender.py:send():391] send: telemetry
+2024-12-17 13:26:17,684 DEBUG   SenderThread:40875 [sender.py:send():391] send: telemetry
+2024-12-17 13:26:17,909 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:18,573 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:19,573 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:19,910 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:20,573 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:20,768 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:20,769 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:20,769 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:20,769 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:20,770 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:20,911 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:20,911 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:20,996 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:20,996 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:20,997 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:20,997 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:21,180 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:21,182 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:21,182 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:21,183 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:21,399 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:21,402 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:21,402 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:21,403 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:21,573 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:21,912 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:22,574 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:23,574 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:23,914 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:24,574 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:25,574 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:26,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:26,574 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:27,144 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:27,145 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:27,145 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:27,146 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:27,352 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:27,353 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:27,354 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:27,355 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:27,565 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:27,567 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:27,568 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:27,569 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:27,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:27,799 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:27,801 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:27,801 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:27,801 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:27,916 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:28,018 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:28,022 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:28,025 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:28,026 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:28,287 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:28,287 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:28,288 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:28,289 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:28,503 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:28,504 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:28,505 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:28,510 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:28,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:28,906 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:28,907 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:28,908 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:28,908 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:28,916 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:29,117 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:29,118 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:29,118 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:29,119 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:29,332 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:29,334 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:29,335 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:29,336 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:29,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:26:29,478 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:26:29,538 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:29,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:29,681 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:29,681 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:29,684 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:29,919 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:29,920 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:30,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:31,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:31,689 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:31,919 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/config.yaml
+2024-12-17 13:26:31,919 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:32,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:33,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:34,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:35,576 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:35,863 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:35,864 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:35,864 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:35,867 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:35,920 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:36,067 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:36,068 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:36,069 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:36,069 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:36,249 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:36,250 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:36,250 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:36,251 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:36,446 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:36,447 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:36,448 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:36,448 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:36,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:36,642 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:36,643 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:36,643 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:36,644 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:36,838 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:36,839 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:36,839 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:36,839 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:36,921 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:37,419 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:37,420 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:37,420 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:37,421 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:37,421 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:37,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:37,617 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:37,618 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:37,618 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:37,619 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:37,921 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:37,922 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:38,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:39,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:39,922 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:40,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:41,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:42,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:42,577 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:43,578 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:44,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:26:44,478 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:26:44,578 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:45,400 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:45,402 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:45,402 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:45,405 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:45,578 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:45,626 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:45,627 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:45,627 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:45,628 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:45,832 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:45,833 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:45,833 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:45,834 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:45,926 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:46,041 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:46,042 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:46,042 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:46,043 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:46,254 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:46,255 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:46,255 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:46,256 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:46,478 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:46,481 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:46,481 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:46,482 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:46,583 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:46,684 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:46,685 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:46,686 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:46,690 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:46,911 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:46,915 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:46,915 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:46,915 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:46,928 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:47,579 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:47,916 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:47,929 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:48,579 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:49,579 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:49,930 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:50,270 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:50,271 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:50,272 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:50,272 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:50,579 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:50,707 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:50,708 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:50,708 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:50,708 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:50,903 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:50,903 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:50,904 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:50,904 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:50,930 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:51,095 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:51,097 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:51,097 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:51,098 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:51,293 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:51,294 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:51,294 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:51,295 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:51,496 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:51,498 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:51,498 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:51,499 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:51,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:51,716 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:51,717 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:51,718 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:51,718 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:51,923 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:51,924 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:51,924 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:51,926 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:51,931 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:51,931 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:52,579 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:52,926 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:53,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:53,931 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:54,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:55,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:56,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:57,449 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:57,450 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:57,450 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:57,452 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:57,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:57,646 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:57,647 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:57,647 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:57,648 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:57,847 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:57,849 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:57,850 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:57,850 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:57,933 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:58,057 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:58,059 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:58,059 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:58,060 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:26:58,060 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:58,262 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:58,264 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:58,264 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:58,265 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:58,475 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:58,477 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:58,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:58,478 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:58,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:58,691 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:58,692 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:58,692 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:58,693 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:58,903 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:58,904 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:58,905 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:58,906 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:58,934 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:59,476 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:26:59,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:26:59,580 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:26:59,765 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:59,778 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:59,778 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:59,779 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:26:59,934 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:26:59,935 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:26:59,997 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:26:59,998 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:26:59,999 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:26:59,999 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:27:00,124 DEBUG   SystemMonitor:40875 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-12-17 13:27:00,126 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:27:00,210 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:27:00,213 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:27:00,213 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:27:00,214 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:27:00,587 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:00,937 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:27:01,583 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:01,937 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:27:02,587 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:03,216 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:03,587 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:04,587 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:05,587 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:06,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:07,587 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:08,481 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:08,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:09,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:10,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:11,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:12,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:13,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:14,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:27:14,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:27:14,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:14,693 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:15,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:16,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:17,588 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:18,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:19,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:20,480 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:20,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:21,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:22,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:23,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:24,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:25,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:26,480 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:26,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:27,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:28,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:29,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:27:29,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:27:29,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:30,127 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:27:30,589 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:31,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:32,128 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:32,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:33,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:34,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:35,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:36,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:37,480 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:37,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:38,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:39,590 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:40,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:41,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:42,480 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:42,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:43,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:44,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:27:44,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:27:44,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:45,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:46,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:47,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:47,722 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:48,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:49,591 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:50,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:51,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:52,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:53,481 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:27:53,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:54,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:55,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:56,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:57,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:58,592 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:59,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:27:59,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:27:59,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:27:59,756 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:00,128 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:28:00,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:01,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:02,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:03,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:04,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:05,480 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:05,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:06,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:07,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:08,593 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:09,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:10,481 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:10,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:11,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:12,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:13,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:14,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:28:14,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:28:14,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:15,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:15,811 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:16,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:17,594 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:18,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:19,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:20,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:21,481 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:21,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:22,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:23,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:24,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:25,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:26,595 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:27,481 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:27,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:28,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:29,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:28:29,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:28:29,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:30,128 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:28:30,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:31,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:32,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:33,129 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:33,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:34,597 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:35,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:36,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:37,596 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:38,481 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:38,597 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:39,357 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:39,358 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:39,358 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:39,359 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:39,650 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:39,967 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:40,339 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:40,340 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:40,340 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:40,342 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:40,531 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:40,532 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:40,532 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:40,533 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:40,602 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:40,707 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:40,708 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:40,708 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:40,709 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:40,902 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:40,903 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:40,903 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:40,904 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:40,968 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:41,096 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:41,097 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:41,097 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:41,097 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:41,293 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:41,294 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:41,295 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:41,296 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:41,494 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:41,495 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:41,495 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:41,499 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:41,602 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:41,700 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:41,701 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:41,701 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:41,701 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:41,897 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:41,899 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:41,899 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:41,900 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:41,968 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:41,969 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:28:42,103 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:42,105 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:42,105 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:42,106 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:42,304 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:42,305 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:42,305 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:42,305 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:42,491 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:42,493 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:42,493 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:42,494 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:42,602 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:42,684 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:42,685 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:42,686 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:42,686 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:42,880 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:42,881 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:42,882 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:42,882 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:42,969 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:43,079 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:43,080 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:43,080 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:43,081 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:43,273 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:43,275 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:43,275 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:43,276 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:43,487 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:43,489 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:43,490 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:43,490 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:43,494 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:43,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:43,691 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:43,693 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:43,693 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:43,693 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:43,892 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:43,893 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:43,893 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:43,893 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:43,969 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:43,969 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:28:44,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:28:44,478 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:28:44,602 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:45,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:45,970 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:28:46,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:47,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:48,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:48,753 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:49,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:50,254 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:50,254 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:50,255 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:50,264 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:50,433 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:50,433 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:50,434 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:50,458 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:50,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:50,618 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:50,619 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:50,619 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:50,620 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:50,801 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:50,802 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:50,802 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:50,803 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:50,971 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:50,975 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:50,976 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:50,976 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:50,977 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:51,169 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:51,170 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:51,171 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:51,171 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:51,375 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:51,376 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:51,377 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:51,377 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:51,572 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:51,574 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:51,574 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:51,575 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:51,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:51,778 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:51,779 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:51,779 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:51,780 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:51,971 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:51,973 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:51,973 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:51,973 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:51,974 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:51,974 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:28:52,161 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:52,163 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:52,163 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:52,164 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:52,427 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:52,430 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:52,430 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:52,431 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:52,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:52,634 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:52,636 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:52,637 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:52,638 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:52,974 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:53,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:53,974 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:28:54,488 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:54,603 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:54,989 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:54,990 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:54,990 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:54,991 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:55,190 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:55,191 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:55,191 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:55,192 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:55,383 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:55,384 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:55,384 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:55,385 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:55,567 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:55,568 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:55,568 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:55,568 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:55,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:55,759 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:55,760 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:55,760 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:55,761 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:55,956 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:55,958 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:55,958 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:55,959 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:55,975 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:56,172 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:56,173 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:56,174 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:56,174 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:56,413 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:56,415 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:56,416 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:56,417 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:56,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:56,976 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:57,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:57,727 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:57,730 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:57,731 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:57,731 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:57,917 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:57,918 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:57,918 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:57,919 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:57,976 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:57,977 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:28:58,111 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:28:58,112 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:28:58,113 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:28:58,113 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:28:58,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:58,977 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:28:59,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:28:59,478 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:28:59,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:28:59,763 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:28:59,977 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:29:00,129 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:29:00,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:01,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:02,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:03,166 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:03,167 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:03,167 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:03,168 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:03,348 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:03,349 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:03,349 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:03,349 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:03,530 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:03,532 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:03,532 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:03,532 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:03,604 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:03,721 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:03,722 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:03,722 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:03,722 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:03,904 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:03,905 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:03,905 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:03,906 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:03,979 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:29:04,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:05,488 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:05,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:05,979 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:29:06,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:06,723 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:06,724 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:06,724 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:06,725 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:06,911 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:29:06,912 DEBUG   SenderThread:40875 [sender.py:send():391] send: history
+2024-12-17 13:29:06,912 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:29:06,913 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:06,980 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:29:07,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:07,980 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:29:08,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:09,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:10,488 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:10,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:11,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:12,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:13,605 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:14,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:29:14,477 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:29:14,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:15,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:15,706 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:16,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:17,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:18,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:19,606 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:20,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:21,490 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:21,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:22,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:23,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:24,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:25,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:26,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:27,489 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:27,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:28,607 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:29,477 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:29:29,478 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:29:29,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:30,130 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:29:30,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:31,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:32,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:33,131 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:33,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:34,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:35,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:36,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:37,608 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:38,489 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:38,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:39,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:40,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:41,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:42,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:43,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:44,478 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:29:44,478 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:29:44,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:44,717 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:45,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:46,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:47,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:48,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:49,609 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:50,489 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:50,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:51,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:52,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:53,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:54,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:55,489 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:55,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:56,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:57,610 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:29:57,671 DEBUG   SenderThread:40875 [sender.py:send():391] send: exit
+2024-12-17 13:29:57,671 INFO    SenderThread:40875 [sender.py:send_exit():598] handling exit code: 255
+2024-12-17 13:29:57,672 INFO    SenderThread:40875 [sender.py:send_exit():600] handling runtime: 237
+2024-12-17 13:29:57,673 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:57,673 INFO    SenderThread:40875 [sender.py:send_exit():606] send defer
+2024-12-17 13:29:57,673 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,673 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 0
+2024-12-17 13:29:57,674 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,674 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 0
+2024-12-17 13:29:57,674 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 1
+2024-12-17 13:29:57,674 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,674 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 1
+2024-12-17 13:29:57,674 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,674 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 1
+2024-12-17 13:29:57,674 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 2
+2024-12-17 13:29:57,674 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,674 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 2
+2024-12-17 13:29:57,674 INFO    HandlerThread:40875 [system_monitor.py:finish():203] Stopping system monitor
+2024-12-17 13:29:57,675 DEBUG   SystemMonitor:40875 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-12-17 13:29:57,675 INFO    HandlerThread:40875 [interfaces.py:finish():200] Joined cpu monitor
+2024-12-17 13:29:57,675 DEBUG   SystemMonitor:40875 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-12-17 13:29:57,675 INFO    HandlerThread:40875 [interfaces.py:finish():200] Joined disk monitor
+2024-12-17 13:29:57,733 INFO    HandlerThread:40875 [interfaces.py:finish():200] Joined gpu monitor
+2024-12-17 13:29:57,734 INFO    HandlerThread:40875 [interfaces.py:finish():200] Joined memory monitor
+2024-12-17 13:29:57,734 INFO    HandlerThread:40875 [interfaces.py:finish():200] Joined network monitor
+2024-12-17 13:29:57,734 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,734 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 2
+2024-12-17 13:29:57,734 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 3
+2024-12-17 13:29:57,734 DEBUG   SenderThread:40875 [sender.py:send():391] send: stats
+2024-12-17 13:29:57,735 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,735 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 3
+2024-12-17 13:29:57,735 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,735 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 3
+2024-12-17 13:29:57,735 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 4
+2024-12-17 13:29:57,735 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,735 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 4
+2024-12-17 13:29:57,735 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,735 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 4
+2024-12-17 13:29:57,736 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 5
+2024-12-17 13:29:57,736 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,736 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 5
+2024-12-17 13:29:57,736 DEBUG   SenderThread:40875 [sender.py:send():391] send: summary
+2024-12-17 13:29:57,736 INFO    SenderThread:40875 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:29:57,737 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,737 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 5
+2024-12-17 13:29:57,737 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 6
+2024-12-17 13:29:57,737 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,737 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 6
+2024-12-17 13:29:57,737 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,737 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 6
+2024-12-17 13:29:57,737 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 7
+2024-12-17 13:29:57,737 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:29:57,737 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:29:57,737 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 7
+2024-12-17 13:29:57,738 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:29:57,738 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 7
+2024-12-17 13:29:57,998 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:29:58,672 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:30:00,142 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 8
+2024-12-17 13:30:00,143 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:30:00,143 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:00,144 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 8
+2024-12-17 13:30:00,144 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:00,144 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 8
+2024-12-17 13:30:00,145 INFO    SenderThread:40875 [job_builder.py:build():443] Attempting to build job artifact
+2024-12-17 13:30:00,145 INFO    SenderThread:40875 [job_builder.py:_get_source_type():572] is repo sourced job
+2024-12-17 13:30:00,210 INFO    SenderThread:40875 [job_builder.py:build():548] adding wandb-job metadata file
+2024-12-17 13:30:00,216 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 9
+2024-12-17 13:30:00,216 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:00,216 DEBUG   SenderThread:40875 [sender.py:send():391] send: artifact
+2024-12-17 13:30:00,216 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 9
+2024-12-17 13:30:00,673 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:30:00,999 INFO    Thread-12 :40875 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:30:01,827 INFO    wandb-upload_1:40875 [upload_job.py:push():85] Skipped uploading /home/hous/.local/share/wandb/artifacts/staging/tmppu_qnv7t
+2024-12-17 13:30:02,080 INFO    wandb-upload_0:40875 [upload_job.py:push():88] Uploaded file /tmp/tmpwisaj0bi/wandb-job.json
+2024-12-17 13:30:03,361 INFO    SenderThread:40875 [sender.py:send_artifact():1549] sent artifact job-https___github.com_Houssem-Ben-Salem_Kidney_Segmentation.git_TransUNet_train.py - {'id': 'QXJ0aWZhY3Q6MTM3OTIzMDgwOQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjUwMDY5ODI1Mg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTM3OTIxMjkxMw==', 'versionIndex': 4}}}
+2024-12-17 13:30:03,361 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:03,361 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 9
+2024-12-17 13:30:03,361 INFO    SenderThread:40875 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-12-17 13:30:03,361 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:30:04,000 INFO    SenderThread:40875 [dir_watcher.py:finish():388] scan: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files
+2024-12-17 13:30:04,001 INFO    SenderThread:40875 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/config.yaml config.yaml
+2024-12-17 13:30:04,001 INFO    SenderThread:40875 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/requirements.txt requirements.txt
+2024-12-17 13:30:04,002 INFO    SenderThread:40875 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/conda-environment.yaml conda-environment.yaml
+2024-12-17 13:30:04,004 INFO    SenderThread:40875 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json wandb-summary.json
+2024-12-17 13:30:04,004 INFO    SenderThread:40875 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log output.log
+2024-12-17 13:30:04,007 INFO    SenderThread:40875 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-metadata.json wandb-metadata.json
+2024-12-17 13:30:04,007 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 10
+2024-12-17 13:30:04,007 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:30:04,007 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:04,008 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 10
+2024-12-17 13:30:04,009 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:04,009 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 10
+2024-12-17 13:30:04,009 INFO    SenderThread:40875 [file_pusher.py:finish():169] shutting down file pusher
+2024-12-17 13:30:04,428 INFO    wandb-upload_1:40875 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/config.yaml
+2024-12-17 13:30:04,624 INFO    wandb-upload_3:40875 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/wandb-summary.json
+2024-12-17 13:30:04,662 INFO    wandb-upload_4:40875 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/output.log
+2024-12-17 13:30:04,663 INFO    wandb-upload_0:40875 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/requirements.txt
+2024-12-17 13:30:04,669 INFO    wandb-upload_2:40875 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/files/conda-environment.yaml
+2024-12-17 13:30:04,674 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:30:04,675 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:30:04,869 INFO    Thread-11 (_thread_body):40875 [sender.py:transition_state():626] send defer: 11
+2024-12-17 13:30:04,870 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:04,870 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 11
+2024-12-17 13:30:04,870 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:04,870 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 11
+2024-12-17 13:30:04,870 INFO    SenderThread:40875 [file_pusher.py:join():175] waiting for file pusher
+2024-12-17 13:30:04,871 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 12
+2024-12-17 13:30:04,871 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:04,871 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 12
+2024-12-17 13:30:04,871 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:04,871 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 12
+2024-12-17 13:30:04,871 INFO    SenderThread:40875 [file_stream.py:finish():601] file stream finish called
+2024-12-17 13:30:05,675 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:30:05,842 INFO    SenderThread:40875 [file_stream.py:finish():605] file stream finish is done
+2024-12-17 13:30:05,842 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 13
+2024-12-17 13:30:05,842 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:30:05,842 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:05,842 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 13
+2024-12-17 13:30:05,842 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:05,843 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 13
+2024-12-17 13:30:05,843 INFO    SenderThread:40875 [sender.py:transition_state():626] send defer: 14
+2024-12-17 13:30:05,843 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:30:05,843 INFO    HandlerThread:40875 [handler.py:handle_request_defer():184] handle defer: 14
+2024-12-17 13:30:05,843 DEBUG   SenderThread:40875 [sender.py:send():391] send: final
+2024-12-17 13:30:05,843 DEBUG   SenderThread:40875 [sender.py:send():391] send: footer
+2024-12-17 13:30:05,843 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:30:05,843 INFO    SenderThread:40875 [sender.py:send_request_defer():622] handle sender defer: 14
+2024-12-17 13:30:05,844 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:30:05,844 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: server_info
+2024-12-17 13:30:05,844 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:30:05,845 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:30:05,845 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: get_summary
+2024-12-17 13:30:05,845 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: server_info
+2024-12-17 13:30:05,845 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: sampled_history
+2024-12-17 13:30:05,847 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:30:06,132 DEBUG   SenderThread:40875 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:30:06,132 INFO    MainThread:40875 [wandb_run.py:_footer_history_summary_info():4076] rendering history
+2024-12-17 13:30:06,132 INFO    MainThread:40875 [wandb_run.py:_footer_history_summary_info():4108] rendering summary
+2024-12-17 13:30:06,143 INFO    MainThread:40875 [wandb_run.py:_footer_sync_info():4035] logging synced files
+2024-12-17 13:30:06,144 DEBUG   HandlerThread:40875 [handler.py:handle_request():158] handle_request: shutdown
+2024-12-17 13:30:06,144 INFO    HandlerThread:40875 [handler.py:finish():880] shutting down handler
+2024-12-17 13:30:06,844 INFO    WriterThread:40875 [datastore.py:close():296] close: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_132559-hto65fyb/run-hto65fyb.wandb
+2024-12-17 13:30:07,132 INFO    SenderThread:40875 [sender.py:finish():1631] shutting down sender
+2024-12-17 13:30:07,132 INFO    SenderThread:40875 [file_pusher.py:finish():169] shutting down file pusher
+2024-12-17 13:30:07,132 INFO    SenderThread:40875 [file_pusher.py:join():175] waiting for file pusher

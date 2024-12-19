@@ -1,0 +1,1 @@
+{"Train/Loss": NaN, "Train/LR": 0.009982178234537873, "Iteration": 100, "_timestamp": 1734438546.9107873, "_runtime": 187.5755853652954, "_step": 100, "Val/Loss": 0.35548184514045716, "Val/Dice": 0.0, "_wandb": {"runtime": 237}}

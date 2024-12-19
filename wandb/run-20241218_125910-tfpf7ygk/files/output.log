@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 83, in <module>
+    net.load_from(weights=np.load(config_vit.pretrained_path))
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 444, in load_from
+    self.transformer.embeddings.patch_embeddings.bias.copy_(resized_patch_bias)
+RuntimeError: The size of tensor a (1024) must match the size of tensor b (768) at non-singleton dimension 0

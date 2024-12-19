@@ -1,0 +1,18 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=100, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, exp='TU_KiTS19_224')
+73500 iterations per epoch. 7350000 max iterations.
+  0%|                                         | 0/100 [00:00<?, ?it/s]
+Iteration 1: Loss 0.9399, Loss_CE 1.0875
+Iteration 2: Loss 0.8905, Loss_CE 1.0235
+Iteration 3: Loss 0.8143, Loss_CE 0.8697
+Iteration 4: Loss 0.7198, Loss_CE 0.7057
+  0%|                                         | 0/100 [00:06<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 85, in <module>
+    trainer_kits19(args, net, snapshot_path)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 110, in trainer_kits19
+    loss.backward()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

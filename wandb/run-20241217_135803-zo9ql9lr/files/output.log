@@ -1,0 +1,96 @@
+
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', exp='TU_KiTS19_224')
+  0%|                                       | 0/49900 [00:00<?, ?it/s]
+Resuming from checkpoint at iteration 100. Best Dice so far: 0.0000
+73500 iterations per epoch. 50000 total iterations.
+Iteration 101: Loss 0.3548
+Iteration 102: Loss 0.3316
+Iteration 103: Loss 0.3542
+Iteration 104: Loss 0.3543
+Iteration 105: Loss 0.3409
+Iteration 106: Loss 0.3676
+Iteration 107: Loss 0.3602
+Iteration 108: Loss 0.3460
+Iteration 109: Loss 0.3418
+Iteration 110: Loss 0.3432
+Iteration 111: Loss 0.4102
+Iteration 112: Loss 0.3408
+Iteration 113: Loss 0.3865
+Iteration 114: Loss 0.3416
+Iteration 115: Loss 0.4380
+Iteration 116: Loss 0.3775
+Iteration 117: Loss 0.3419
+Iteration 118: Loss 0.3412
+Iteration 119: Loss 0.3405
+Iteration 120: Loss 0.3899
+Iteration 121: Loss 0.3930
+Iteration 122: Loss 0.3465
+Iteration 123: Loss 0.3484
+Iteration 124: Loss 0.3490
+Iteration 125: Loss 0.3503
+Iteration 126: Loss 0.3537
+Iteration 127: Loss 0.3439
+Iteration 128: Loss 0.3519
+Iteration 129: Loss 0.3524
+Iteration 130: Loss 0.3516
+Iteration 131: Loss 0.3504
+Iteration 132: Loss 0.3478
+Iteration 133: Loss 0.3276
+Iteration 134: Loss 0.3455
+Iteration 135: Loss 0.4734
+Iteration 136: Loss 0.3435
+Iteration 137: Loss 0.3432
+Iteration 138: Loss 0.3414
+Iteration 139: Loss 0.3303
+Iteration 140: Loss 0.3523
+Iteration 141: Loss 0.3408
+Iteration 142: Loss 0.3417
+Iteration 143: Loss 0.3443
+Iteration 144: Loss 0.3454
+Iteration 145: Loss 0.3466
+Iteration 146: Loss 0.4353
+Iteration 147: Loss 0.3297
+Iteration 148: Loss 0.3585
+Iteration 149: Loss 0.3625
+  0%|                                       | 0/49900 [00:00<?, ?it/s]Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f4f1fb467a0>
+Traceback (most recent call last):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1442, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:
+  0%|                                       | 0/49900 [00:42<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 82, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 145, in trainer_kits19
+    val_loss, val_dice = validate(val_loader, model, ce_loss, dice_loss, num_classes)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 24, in validate
+    for sampled_batch in val_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/datasets/dataset_kits19_list.py", line 46, in __getitem__
+    case, slice_idx = self.slices[idx]
+ValueError: not enough values to unpack (expected 2, got 0)

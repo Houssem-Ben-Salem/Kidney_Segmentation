@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 82, in <module>
+    net.load_from(weights=np.load(config_vit.pretrained_path))
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 440, in load_from
+    unit.load_from(res_weight, n_block=bname, n_unit=uname)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling_resnet_skip.py", line 91, in load_from
+    self.conv2.weight.copy_(conv2_weight)
+KeyboardInterrupt

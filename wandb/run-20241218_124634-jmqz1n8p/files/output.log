@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 83, in <module>
+    net.load_from(weights=np.load(config_vit.pretrained_path))
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 423, in load_from
+    resized_patch_embeddings = torch.nn.functional.interpolate(
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/functional.py", line 3916, in interpolate
+    raise ValueError(
+ValueError: Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [1, 1, 1024, 1, 1] and output size of (1, 1). Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.

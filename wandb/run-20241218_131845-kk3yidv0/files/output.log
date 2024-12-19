@@ -1,0 +1,14 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=4, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits1', use_attention=1, exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+18375 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:32<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 131, in trainer_kits19
+    outputs, attn_weights = model(image_batch, return_attn=True)  # Ensure model supports this mode
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: VisionTransformer.forward() got an unexpected keyword argument 'return_attn'

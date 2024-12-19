@@ -1,0 +1,486 @@
+2024-12-17 13:58:03,542 INFO    StreamThr :57552 [internal.py:wandb_internal():85] W&B internal server running at pid: 57552, started at: 2024-12-17 13:58:03.542306
+2024-12-17 13:58:03,543 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status
+2024-12-17 13:58:03,544 INFO    WriterThread:57552 [datastore.py:open_for_write():87] open: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/run-zo9ql9lr.wandb
+2024-12-17 13:58:03,546 DEBUG   SenderThread:57552 [sender.py:send():391] send: header
+2024-12-17 13:58:03,547 DEBUG   SenderThread:57552 [sender.py:send():391] send: run
+2024-12-17 13:58:04,106 INFO    SenderThread:57552 [dir_watcher.py:__init__():211] watching files in: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files
+2024-12-17 13:58:04,106 INFO    SenderThread:57552 [sender.py:_start_run_threads():1200] run started: zo9ql9lr with start time 1734440283.542533
+2024-12-17 13:58:04,109 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: check_version
+2024-12-17 13:58:04,109 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: check_version
+2024-12-17 13:58:04,257 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: run_start
+2024-12-17 13:58:04,276 DEBUG   HandlerThread:57552 [system_info.py:__init__():26] System info init
+2024-12-17 13:58:04,276 DEBUG   HandlerThread:57552 [system_info.py:__init__():41] System info init done
+2024-12-17 13:58:04,276 INFO    HandlerThread:57552 [system_monitor.py:start():194] Starting system monitor
+2024-12-17 13:58:04,277 INFO    SystemMonitor:57552 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-12-17 13:58:04,277 INFO    HandlerThread:57552 [system_monitor.py:probe():214] Collecting system info
+2024-12-17 13:58:04,277 INFO    SystemMonitor:57552 [interfaces.py:start():188] Started cpu monitoring
+2024-12-17 13:58:04,277 INFO    SystemMonitor:57552 [interfaces.py:start():188] Started disk monitoring
+2024-12-17 13:58:04,278 INFO    SystemMonitor:57552 [interfaces.py:start():188] Started gpu monitoring
+2024-12-17 13:58:04,278 INFO    SystemMonitor:57552 [interfaces.py:start():188] Started memory monitoring
+2024-12-17 13:58:04,279 INFO    SystemMonitor:57552 [interfaces.py:start():188] Started network monitoring
+2024-12-17 13:58:04,292 DEBUG   HandlerThread:57552 [system_info.py:probe():152] Probing system
+2024-12-17 13:58:04,293 DEBUG   HandlerThread:57552 [system_info.py:_probe_git():137] Probing git
+2024-12-17 13:58:04,297 DEBUG   HandlerThread:57552 [system_info.py:_probe_git():145] Probing git done
+2024-12-17 13:58:04,297 DEBUG   HandlerThread:57552 [system_info.py:probe():200] Probing system done
+2024-12-17 13:58:04,297 DEBUG   HandlerThread:57552 [system_monitor.py:probe():223] {'os': 'Linux-6.8.0-49-generic-x86_64-with-glibc2.35', 'python': '3.10.9', 'heartbeatAt': '2024-12-17T12:58:04.292706', 'startedAt': '2024-12-17T12:58:03.528523', 'docker': None, 'cuda': None, 'args': ('--dataset', 'KiTS19', '--img_size', '224', '--batch_size', '1', '--max_iterations', '50000', '--num_classes', '3', '--checkpoint_dir', './checkpoints_kits19'), 'state': 'running', 'program': '/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py', 'codePathLocal': 'TransUNet/train.py', 'codePath': 'TransUNet/train.py', 'git': {'remote': 'https://github.com/Houssem-Ben-Salem/Kidney_Segmentation.git', 'commit': '51e158f300f5b3ccee4baf04d6cb5ed43ab0b531'}, 'email': 'boumaiza.ghaith.pr@gmail.com', 'root': '/home/hous/Desktop/Kidney_Segmentation', 'host': 'HOUS-GF63-Thin-10SCSR', 'username': 'hous', 'executable': '/home/hous/anaconda3/envs/torch/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.215583333333334, 'min': 800.0, 'max': 5000.0}, 'cpu_freq_per_core': [{'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.195, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.198, 'min': 800.0, 'max': 5000.0}, {'current': 4.201, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}, {'current': 4.2, 'min': 800.0, 'max': 5000.0}, {'current': 4.199, 'min': 800.0, 'max': 5000.0}], 'disk': {'/': {'total': 467.8899917602539, 'used': 417.241153717041}}, 'gpu': 'NVIDIA GeForce GTX 1650 Ti with Max-Q Design', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1650 Ti with Max-Q Design', 'memory_total': 4294967296}], 'memory': {'total': 23.235435485839844}}
+2024-12-17 13:58:04,297 INFO    HandlerThread:57552 [system_monitor.py:probe():224] Finished collecting system info
+2024-12-17 13:58:04,297 INFO    HandlerThread:57552 [system_monitor.py:probe():227] Publishing system info
+2024-12-17 13:58:04,297 DEBUG   HandlerThread:57552 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-12-17 13:58:05,107 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/conda-environment.yaml
+2024-12-17 13:58:16,108 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/conda-environment.yaml
+2024-12-17 13:58:16,284 DEBUG   HandlerThread:57552 [system_info.py:_save_conda():224] Saving conda packages done
+2024-12-17 13:58:16,285 INFO    HandlerThread:57552 [system_monitor.py:probe():229] Finished publishing system info
+2024-12-17 13:58:16,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:16,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-17 13:58:16,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:16,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-17 13:58:16,305 DEBUG   SenderThread:57552 [sender.py:send():391] send: files
+2024-12-17 13:58:16,305 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-metadata.json with policy now
+2024-12-17 13:58:16,726 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: python_packages
+2024-12-17 13:58:16,726 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: python_packages
+2024-12-17 13:58:16,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:16,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:58:16,727 DEBUG   SenderThread:57552 [sender.py:send():391] send: telemetry
+2024-12-17 13:58:16,727 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:58:17,108 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/requirements.txt
+2024-12-17 13:58:17,119 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-metadata.json
+2024-12-17 13:58:17,442 INFO    wandb-upload_0:57552 [upload_job.py:push():130] Uploaded file /tmp/tmpe_mjm4k5wandb/ov9yuzft-wandb-metadata.json
+2024-12-17 13:58:17,726 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:18,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:19,487 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:19,716 DEBUG   SenderThread:57552 [sender.py:send():391] send: telemetry
+2024-12-17 13:58:19,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:19,803 DEBUG   SenderThread:57552 [sender.py:send():391] send: telemetry
+2024-12-17 13:58:20,109 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:20,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:21,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:22,110 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:22,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:23,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:24,112 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:24,728 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:24,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:24,953 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:24,954 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:24,954 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:24,954 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:25,113 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:25,150 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:25,150 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:25,150 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:25,151 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:25,341 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:25,342 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:25,342 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:25,342 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:25,565 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:25,566 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:25,566 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:25,567 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:25,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:26,114 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:26,114 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:26,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:27,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:28,114 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:28,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:29,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:30,061 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:30,062 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:30,062 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:30,063 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:30,064 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:30,116 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:30,260 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:30,262 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:30,262 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:30,263 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:30,480 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:30,481 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:30,481 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:30,482 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:30,705 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:30,706 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:30,706 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:30,707 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:30,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:30,907 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:30,908 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:30,909 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:30,909 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:31,110 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:31,111 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:31,112 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:31,112 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:31,116 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:31,318 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:31,319 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:31,319 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:31,319 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:31,520 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:31,521 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:31,521 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:31,522 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:31,717 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:31,719 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:31,719 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:31,719 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:31,736 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:58:31,737 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:58:31,773 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:32,030 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:32,034 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:32,034 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:32,034 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:32,118 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:32,119 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:32,301 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:32,302 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:32,302 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:32,305 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:32,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:33,121 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:33,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:34,118 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:34,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:35,310 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:35,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:36,119 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/config.yaml
+2024-12-17 13:58:36,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:37,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:38,506 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:38,507 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:38,507 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:38,509 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:38,702 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:38,703 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:38,704 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:38,704 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:38,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:38,898 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:38,899 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:38,899 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:38,900 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:39,094 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:39,095 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:39,095 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:39,095 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:39,124 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:39,294 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:39,295 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:39,296 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:39,297 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:39,536 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:39,538 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:39,538 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:39,539 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:39,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:40,007 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:40,007 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:40,008 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:40,008 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:40,121 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:40,122 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:40,205 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:40,206 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:40,207 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:40,207 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:40,732 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:41,121 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:41,208 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:41,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:42,122 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:42,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:43,732 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:44,731 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:45,696 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:45,697 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:45,698 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:45,699 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:45,736 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:45,887 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:45,887 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:45,888 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:45,888 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:46,082 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:46,083 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:46,083 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:46,083 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:46,123 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:46,270 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:46,270 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:46,271 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:46,271 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:46,272 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:46,471 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:46,472 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:46,473 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:46,473 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:46,684 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:46,685 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:46,685 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:46,686 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:46,730 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:58:46,731 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:58:46,771 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:46,879 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:46,973 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:46,973 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:46,974 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:47,087 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:47,088 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:47,088 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:47,088 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:47,124 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:47,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:48,124 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:48,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:49,521 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:49,522 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:49,522 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:49,524 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:49,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:50,125 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:50,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:51,181 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:51,182 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:51,182 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:51,183 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:51,381 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:51,382 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:51,383 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:51,383 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:51,383 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:51,573 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:51,574 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:51,574 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:51,574 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:51,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:51,770 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:51,771 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:51,771 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:51,771 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:51,970 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:51,971 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:51,971 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:51,972 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:52,126 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:52,126 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:52,173 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:52,174 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:52,174 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:52,174 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:52,376 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:52,378 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:52,378 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:52,378 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:52,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:53,126 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:53,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:54,127 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:54,733 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:55,734 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:56,500 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:56,500 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:56,501 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:56,501 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:58:56,502 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:56,698 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:56,699 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:56,699 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:56,699 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:56,734 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:56,890 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:56,891 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:56,892 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:56,892 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:57,083 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:57,084 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:57,084 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:57,085 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:57,128 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:57,285 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:57,286 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:57,287 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:57,287 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:57,476 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:57,478 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:57,478 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:57,478 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:57,687 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:57,689 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:57,689 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:57,690 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:57,734 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:57,889 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:57,890 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:57,890 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:57,891 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:58,087 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:58,092 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:58,092 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:58,093 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:58,129 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:58:58,129 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:58,295 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:58,296 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:58,296 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:58,297 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:58,494 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: partial_history
+2024-12-17 13:58:58,495 DEBUG   SenderThread:57552 [sender.py:send():391] send: history
+2024-12-17 13:58:58,495 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: summary_record
+2024-12-17 13:58:58,496 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:58:58,741 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:58:59,132 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:58:59,738 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:59:00,132 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:59:00,737 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:59:01,732 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:59:01,732 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: stop_status
+2024-12-17 13:59:01,733 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: stop_status
+2024-12-17 13:59:01,772 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:59:02,737 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:59:03,302 DEBUG   SenderThread:57552 [sender.py:send():391] send: exit
+2024-12-17 13:59:03,302 INFO    SenderThread:57552 [sender.py:send_exit():598] handling exit code: 1
+2024-12-17 13:59:03,302 INFO    SenderThread:57552 [sender.py:send_exit():600] handling runtime: 59
+2024-12-17 13:59:03,304 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:59:03,304 INFO    SenderThread:57552 [sender.py:send_exit():606] send defer
+2024-12-17 13:59:03,304 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,304 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 0
+2024-12-17 13:59:03,305 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,305 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 0
+2024-12-17 13:59:03,305 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 1
+2024-12-17 13:59:03,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,305 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 1
+2024-12-17 13:59:03,305 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,305 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 1
+2024-12-17 13:59:03,305 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 2
+2024-12-17 13:59:03,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,305 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 2
+2024-12-17 13:59:03,305 INFO    HandlerThread:57552 [system_monitor.py:finish():203] Stopping system monitor
+2024-12-17 13:59:03,305 DEBUG   SystemMonitor:57552 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-12-17 13:59:03,305 DEBUG   SystemMonitor:57552 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-12-17 13:59:03,305 DEBUG   SystemMonitor:57552 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-12-17 13:59:03,306 INFO    HandlerThread:57552 [interfaces.py:finish():200] Joined cpu monitor
+2024-12-17 13:59:03,307 INFO    HandlerThread:57552 [interfaces.py:finish():200] Joined disk monitor
+2024-12-17 13:59:03,368 INFO    HandlerThread:57552 [interfaces.py:finish():200] Joined gpu monitor
+2024-12-17 13:59:03,368 INFO    HandlerThread:57552 [interfaces.py:finish():200] Joined memory monitor
+2024-12-17 13:59:03,368 INFO    HandlerThread:57552 [interfaces.py:finish():200] Joined network monitor
+2024-12-17 13:59:03,368 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,368 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 2
+2024-12-17 13:59:03,368 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 3
+2024-12-17 13:59:03,369 DEBUG   SenderThread:57552 [sender.py:send():391] send: stats
+2024-12-17 13:59:03,369 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,369 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 3
+2024-12-17 13:59:03,369 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,369 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 3
+2024-12-17 13:59:03,369 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 4
+2024-12-17 13:59:03,369 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,369 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 4
+2024-12-17 13:59:03,370 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,370 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 4
+2024-12-17 13:59:03,370 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 5
+2024-12-17 13:59:03,370 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,370 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 5
+2024-12-17 13:59:03,370 DEBUG   SenderThread:57552 [sender.py:send():391] send: summary
+2024-12-17 13:59:03,370 INFO    SenderThread:57552 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2024-12-17 13:59:03,371 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,371 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 5
+2024-12-17 13:59:03,371 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 6
+2024-12-17 13:59:03,371 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,371 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 6
+2024-12-17 13:59:03,371 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,371 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 6
+2024-12-17 13:59:03,371 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 7
+2024-12-17 13:59:03,371 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: status_report
+2024-12-17 13:59:03,371 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:03,371 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 7
+2024-12-17 13:59:03,371 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:03,372 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 7
+2024-12-17 13:59:04,142 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:59:04,303 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:59:05,314 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 8
+2024-12-17 13:59:05,314 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:59:05,314 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:05,314 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 8
+2024-12-17 13:59:05,315 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:05,315 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 8
+2024-12-17 13:59:05,315 INFO    SenderThread:57552 [job_builder.py:build():443] Attempting to build job artifact
+2024-12-17 13:59:05,315 INFO    SenderThread:57552 [job_builder.py:_get_source_type():572] is repo sourced job
+2024-12-17 13:59:05,370 INFO    SenderThread:57552 [job_builder.py:build():548] adding wandb-job metadata file
+2024-12-17 13:59:05,374 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 9
+2024-12-17 13:59:05,375 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:05,375 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 9
+2024-12-17 13:59:05,375 DEBUG   SenderThread:57552 [sender.py:send():391] send: artifact
+2024-12-17 13:59:06,142 INFO    Thread-12 :57552 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:59:06,303 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:59:06,614 INFO    SenderThread:57552 [sender.py:send_artifact():1549] sent artifact job-https___github.com_Houssem-Ben-Salem_Kidney_Segmentation.git_TransUNet_train.py - {'id': 'QXJ0aWZhY3Q6MTM3OTIxMjkxMw==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjUwMDY5ODI1Mg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTM3OTIzMDgwOQ==', 'versionIndex': 5}}}
+2024-12-17 13:59:06,614 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:06,614 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 9
+2024-12-17 13:59:06,614 INFO    SenderThread:57552 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-12-17 13:59:07,142 INFO    SenderThread:57552 [dir_watcher.py:finish():388] scan: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files
+2024-12-17 13:59:07,143 INFO    SenderThread:57552 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/config.yaml config.yaml
+2024-12-17 13:59:07,143 INFO    SenderThread:57552 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/requirements.txt requirements.txt
+2024-12-17 13:59:07,155 INFO    SenderThread:57552 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/conda-environment.yaml conda-environment.yaml
+2024-12-17 13:59:07,155 INFO    SenderThread:57552 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json wandb-summary.json
+2024-12-17 13:59:07,157 INFO    SenderThread:57552 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log output.log
+2024-12-17 13:59:07,160 INFO    SenderThread:57552 [dir_watcher.py:finish():402] scan save: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-metadata.json wandb-metadata.json
+2024-12-17 13:59:07,160 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 10
+2024-12-17 13:59:07,160 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:59:07,160 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:07,161 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 10
+2024-12-17 13:59:07,161 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:07,161 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 10
+2024-12-17 13:59:07,161 INFO    SenderThread:57552 [file_pusher.py:finish():169] shutting down file pusher
+2024-12-17 13:59:07,304 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:59:07,304 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:59:07,569 INFO    wandb-upload_0:57552 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/config.yaml
+2024-12-17 13:59:07,640 INFO    wandb-upload_3:57552 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/wandb-summary.json
+2024-12-17 13:59:07,731 INFO    wandb-upload_4:57552 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/output.log
+2024-12-17 13:59:07,737 INFO    wandb-upload_1:57552 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/requirements.txt
+2024-12-17 13:59:07,744 INFO    wandb-upload_2:57552 [upload_job.py:push():130] Uploaded file /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/files/conda-environment.yaml
+2024-12-17 13:59:07,944 INFO    Thread-11 (_thread_body):57552 [sender.py:transition_state():626] send defer: 11
+2024-12-17 13:59:07,944 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:07,944 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 11
+2024-12-17 13:59:07,945 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:07,945 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 11
+2024-12-17 13:59:07,945 INFO    SenderThread:57552 [file_pusher.py:join():175] waiting for file pusher
+2024-12-17 13:59:07,955 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 12
+2024-12-17 13:59:07,955 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:07,955 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 12
+2024-12-17 13:59:07,956 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:07,956 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 12
+2024-12-17 13:59:07,956 INFO    SenderThread:57552 [file_stream.py:finish():601] file stream finish called
+2024-12-17 13:59:08,305 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:59:08,719 INFO    SenderThread:57552 [file_stream.py:finish():605] file stream finish is done
+2024-12-17 13:59:08,719 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 13
+2024-12-17 13:59:08,720 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:59:08,721 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:08,721 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 13
+2024-12-17 13:59:08,722 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:08,722 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 13
+2024-12-17 13:59:08,722 INFO    SenderThread:57552 [sender.py:transition_state():626] send defer: 14
+2024-12-17 13:59:08,723 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: defer
+2024-12-17 13:59:08,724 INFO    HandlerThread:57552 [handler.py:handle_request_defer():184] handle defer: 14
+2024-12-17 13:59:08,724 DEBUG   SenderThread:57552 [sender.py:send():391] send: final
+2024-12-17 13:59:08,725 DEBUG   SenderThread:57552 [sender.py:send():391] send: footer
+2024-12-17 13:59:08,725 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: defer
+2024-12-17 13:59:08,726 INFO    SenderThread:57552 [sender.py:send_request_defer():622] handle sender defer: 14
+2024-12-17 13:59:08,727 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:59:08,728 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:59:08,729 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: server_info
+2024-12-17 13:59:08,730 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: server_info
+2024-12-17 13:59:08,740 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: poll_exit
+2024-12-17 13:59:08,741 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: get_summary
+2024-12-17 13:59:08,754 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: sampled_history
+2024-12-17 13:59:08,756 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: internal_messages
+2024-12-17 13:59:08,973 DEBUG   SenderThread:57552 [sender.py:send_request():418] send_request: poll_exit
+2024-12-17 13:59:08,974 INFO    MainThread:57552 [wandb_run.py:_footer_history_summary_info():4076] rendering history
+2024-12-17 13:59:08,974 INFO    MainThread:57552 [wandb_run.py:_footer_history_summary_info():4108] rendering summary
+2024-12-17 13:59:08,974 INFO    MainThread:57552 [wandb_run.py:_footer_sync_info():4035] logging synced files
+2024-12-17 13:59:08,974 DEBUG   HandlerThread:57552 [handler.py:handle_request():158] handle_request: shutdown
+2024-12-17 13:59:08,974 INFO    HandlerThread:57552 [handler.py:finish():880] shutting down handler
+2024-12-17 13:59:09,741 INFO    WriterThread:57552 [datastore.py:close():296] close: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20241217_135803-zo9ql9lr/run-zo9ql9lr.wandb
+2024-12-17 13:59:09,974 INFO    SenderThread:57552 [sender.py:finish():1631] shutting down sender
+2024-12-17 13:59:09,974 INFO    SenderThread:57552 [file_pusher.py:finish():169] shutting down file pusher
+2024-12-17 13:59:09,974 INFO    SenderThread:57552 [file_pusher.py:join():175] waiting for file pusher

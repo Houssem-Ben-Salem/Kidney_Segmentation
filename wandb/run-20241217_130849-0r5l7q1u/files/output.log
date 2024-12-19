@@ -1,0 +1,80 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+73500 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:00<?, ?it/s]
+Iteration 1: Loss 0.9399
+Iteration 2: Loss 0.8905
+Iteration 3: Loss 0.8143
+Iteration 4: Loss 0.7220
+Iteration 5: Loss 0.6213
+Iteration 6: Loss 0.5727
+Iteration 7: Loss 0.4947
+Iteration 8: Loss 0.4522
+Iteration 9: Loss 0.4201
+Iteration 10: Loss 0.3984
+Iteration 11: Loss 0.4287
+Iteration 12: Loss 0.3713
+Iteration 13: Loss 0.3774
+Iteration 14: Loss 0.3577
+Iteration 15: Loss 0.4323
+Iteration 16: Loss 0.3621
+Iteration 17: Loss 0.3466
+Iteration 18: Loss 0.3462
+Iteration 19: Loss 0.3802
+Iteration 20: Loss 0.4208
+Iteration 21: Loss 0.4034
+Iteration 22: Loss 0.3794
+Iteration 23: Loss 0.4139
+Iteration 24: Loss 0.3391
+Iteration 25: Loss 0.3396
+Iteration 26: Loss 0.3389
+Iteration 27: Loss 0.3379
+Iteration 28: Loss 0.3376
+Iteration 29: Loss 0.3371
+Iteration 30: Loss 0.3376
+Iteration 31: Loss 0.3374
+Iteration 32: Loss 0.3369
+Iteration 33: Loss 0.3724
+Iteration 34: Loss 0.3364
+Iteration 35: Loss 0.5097
+Iteration 36: Loss 0.3363
+Iteration 37: Loss 0.3362
+Iteration 38: Loss 0.3365
+Iteration 39: Loss 0.4035
+Iteration 40: Loss 0.4229
+Iteration 41: Loss 0.3370
+Iteration 42: Loss 0.3374
+Iteration 43: Loss 0.3376
+Iteration 44: Loss 0.3375
+Iteration 45: Loss 0.4562
+Iteration 46: Loss 0.5373
+Iteration 47: Loss 0.3959
+Iteration 48: Loss 0.3434
+Iteration 49: Loss 0.3435
+  0%|                                       | 0/50000 [15:46<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 82, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 145, in trainer_kits19
+    val_loss, val_dice = validate(val_loader, model, ce_loss, dice_loss, num_classes)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 24, in validate
+    for sampled_batch in val_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1294, in _get_data
+    success, data = self._try_get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 424, in _poll
+    r = wait([self], timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

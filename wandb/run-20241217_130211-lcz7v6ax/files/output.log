@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 87, in <module>
+    trainer_kits19(args, net, snapshot_path)
+TypeError: trainer_kits19() takes 2 positional arguments but 3 were given

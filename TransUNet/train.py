@@ -41,9 +41,14 @@ parser.add_argument('--vit_name', type=str,
                     default='R50-ViT-B_16', help='select one ViT model')
 parser.add_argument('--vit_patches_size', type=int,
                     default=16, help='ViT patch size, default is 16')
+parser.add_argument('--checkpoint_dir', type=str,
+                    default='./checkpoints', help='directory to save/load model checkpoints')
+parser.add_argument('--use_attention', type=int, default=0, 
+                    help='Use Attention Gates in the decoder (1 for Yes, 0 for No)')
 args = parser.parse_args()
 
 if __name__ == "__main__":
+    # Set deterministic training behavior
     if not args.deterministic:
         cudnn.benchmark = True
         cudnn.deterministic = False
@@ -51,35 +56,31 @@ if __name__ == "__main__":
         cudnn.benchmark = False
         cudnn.deterministic = True
 
+    # Set random seeds for reproducibility
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
+    # Set experiment name for W&B and logging
     args.exp = 'TU_' + args.dataset + '_' + str(args.img_size)
-    snapshot_path = "../model/{}/{}".format(args.exp, 'TU')
-    snapshot_path += '_pretrain'
-    snapshot_path += '_' + args.vit_name
-    snapshot_path += '_skip' + str(args.n_skip)
-    snapshot_path += '_vitpatch' + str(args.vit_patches_size) if args.vit_patches_size != 16 else ''
-    snapshot_path += '_epo' + str(args.max_epochs) if args.max_epochs != 30 else ''
-    snapshot_path += '_bs' + str(args.batch_size)
-    snapshot_path += '_lr' + str(args.base_lr) if args.base_lr != 0.01 else ''
-    snapshot_path += '_s' + str(args.seed) if args.seed != 1234 else ''
+    os.makedirs(args.checkpoint_dir, exist_ok=True)
 
-    os.makedirs(snapshot_path, exist_ok=True)
-
-    # Initialize W&B
+    # Initialize W&B for logging
     wandb.init(project="KiTS19-Segmentation", name=args.exp, config=vars(args))
 
+    # Load model configuration
     config_vit = CONFIGS_ViT_seg[args.vit_name]
     config_vit.n_classes = args.num_classes
     config_vit.n_skip = args.n_skip
+    config_vit.use_attention = bool(args.use_attention)  # Pass the attention gate toggle
+
     if 'R50' in args.vit_name:
         config_vit.patches.grid = (int(args.img_size / args.vit_patches_size), int(args.img_size / args.vit_patches_size))
 
+    # Initialize the model and load pretrained weights
     net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
     net.load_from(weights=np.load(config_vit.pretrained_path))
 
-    # Train using the KiTS19 dataset loader
-    trainer_kits19(args, net, snapshot_path)
+    # Start training using the updated trainer
+    trainer_kits19(args, net)

@@ -1,0 +1,37 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits1', use_attention=0, exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+73500 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:00<?, ?it/s]
+Iteration 1: Loss 0.9399
+Iteration 2: Loss 0.8905
+Iteration 3: Loss 0.8144
+Iteration 4: Loss 0.7234
+Iteration 5: Loss 0.6304
+Iteration 6: Loss 0.5594
+Iteration 7: Loss 0.4924
+Iteration 8: Loss 0.4510
+Iteration 9: Loss 0.4206
+Iteration 10: Loss 0.4013
+Iteration 11: Loss 0.4448
+Iteration 12: Loss 0.3709
+Iteration 13: Loss 0.3897
+Iteration 14: Loss 0.3568
+  0%|                                       | 0/50000 [00:09<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 120, in trainer_kits19
+    for sampled_batch in train_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

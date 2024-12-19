@@ -1,0 +1,132 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+73500 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:00<?, ?it/s]
+Iteration 1: Loss 0.9399
+Iteration 2: Loss 0.8905
+Iteration 3: Loss 0.8144
+Iteration 4: Loss 0.7226
+Iteration 5: Loss 0.6280
+Iteration 6: Loss 0.5574
+Iteration 7: Loss 0.4827
+Iteration 8: Loss 0.4512
+Iteration 9: Loss 0.4195
+Iteration 10: Loss 0.4005
+Iteration 11: Loss 0.4434
+Iteration 12: Loss 0.3700
+Iteration 13: Loss 0.3821
+Iteration 14: Loss 0.3560
+Iteration 15: Loss 0.4258
+Iteration 16: Loss 0.3499
+Iteration 17: Loss 0.3465
+Iteration 18: Loss 0.3445
+Iteration 19: Loss 0.3744
+Iteration 20: Loss 0.4139
+Iteration 21: Loss 0.4018
+Iteration 22: Loss 0.3843
+Iteration 23: Loss 0.4074
+Iteration 24: Loss 0.3397
+Iteration 25: Loss 0.3392
+Iteration 26: Loss 0.3390
+Iteration 27: Loss 0.3404
+Iteration 28: Loss 0.3383
+Iteration 29: Loss 0.3385
+Iteration 30: Loss 0.3377
+Iteration 31: Loss 0.3384
+Iteration 32: Loss 0.3376
+Iteration 33: Loss 0.3863
+Iteration 34: Loss 0.3374
+Iteration 35: Loss 0.5656
+Iteration 36: Loss 0.3368
+Iteration 37: Loss 0.3368
+Iteration 38: Loss 0.3366
+Iteration 39: Loss 0.4023
+Iteration 40: Loss 0.4210
+Iteration 41: Loss 0.3372
+Iteration 42: Loss 0.3370
+Iteration 43: Loss 0.3378
+Iteration 44: Loss 0.3380
+Iteration 45: Loss 0.4774
+Iteration 46: Loss 0.5684
+Iteration 47: Loss 0.4040
+Iteration 48: Loss 0.3397
+Iteration 49: Loss 0.3413
+Iteration 50: Loss 0.3420
+Validation: Iteration 50, Val Loss: 0.3555, Val Dice: 0.0000
+Saved latest checkpoint at ./checkpoints_kits19/latest_checkpoint.pth
+Iteration 51: Loss 0.3660
+Iteration 52: Loss 0.6952
+Iteration 53: Loss 1.1546
+Iteration 54: Loss 1.2261
+Iteration 55: Loss 0.3332
+Iteration 56: Loss 0.2175
+Iteration 57: Loss 155.7026
+Iteration 58: Loss 0.7959
+Iteration 59: Loss 0.8061
+Iteration 60: Loss 44726640640.0000
+Iteration 61: Loss nan
+Iteration 62: Loss nan
+Iteration 63: Loss nan
+Iteration 64: Loss nan
+Iteration 65: Loss nan
+Iteration 66: Loss nan
+Iteration 67: Loss nan
+Iteration 68: Loss nan
+Iteration 69: Loss nan
+Iteration 70: Loss nan
+Iteration 71: Loss nan
+Iteration 72: Loss nan
+Iteration 73: Loss nan
+Iteration 74: Loss nan
+Iteration 75: Loss nan
+Iteration 76: Loss nan
+Iteration 77: Loss nan
+Iteration 78: Loss nan
+Iteration 79: Loss nan
+Iteration 80: Loss nan
+Iteration 81: Loss nan
+Iteration 82: Loss nan
+Iteration 83: Loss nan
+Iteration 84: Loss nan
+Iteration 85: Loss nan
+Iteration 86: Loss nan
+Iteration 87: Loss nan
+Iteration 88: Loss nan
+Iteration 89: Loss nan
+Iteration 90: Loss nan
+Iteration 91: Loss nan
+Iteration 92: Loss nan
+Iteration 93: Loss nan
+Iteration 94: Loss nan
+Iteration 95: Loss nan
+Iteration 96: Loss nan
+Iteration 97: Loss nan
+Iteration 98: Loss nan
+Iteration 99: Loss nan
+  0%|                                       | 0/50000 [03:39<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 82, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 145, in trainer_kits19
+    val_loss, val_dice = validate(val_loader, model, ce_loss, dice_loss, num_classes)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 24, in validate
+    for sampled_batch in val_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1294, in _get_data
+    success, data = self._try_get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 424, in _poll
+    r = wait([self], timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
