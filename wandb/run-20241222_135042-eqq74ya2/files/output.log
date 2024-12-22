@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/ml_collections/config_dict/config_dict.py", line 947, in __getitem__
+    field = self._fields[key]
+KeyError: 'use_attention_gate'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/ml_collections/config_dict/config_dict.py", line 849, in __getattr__
+    return self[attribute]
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/ml_collections/config_dict/config_dict.py", line 953, in __getitem__
+    raise KeyError(self._generate_did_you_mean_message(key, str(e)))
+KeyError: '\'use_attention_gate\'\nDid you mean "use_attention" instead of "use_attention_gate"?'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 82, in <module>
+    net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 444, in __init__
+    self.decoder = DecoderCupWithAttention(config)  # Use DecoderCupWithAttention
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 415, in __init__
+    [
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 420, in <listcomp>
+    use_attention=self.config.use_attention_gate,
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/ml_collections/config_dict/config_dict.py", line 851, in __getattr__
+    raise AttributeError(e)
+AttributeError: '\'use_attention_gate\'\nDid you mean "use_attention" instead of "use_attention_gate"?'

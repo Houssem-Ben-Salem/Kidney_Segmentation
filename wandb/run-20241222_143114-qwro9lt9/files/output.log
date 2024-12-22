@@ -1,0 +1,102 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=4, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits1', use_attention=1, exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+18375 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:00<?, ?it/s]
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 1: Loss 0.8653
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 2: Loss 0.8223
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 3: Loss 0.7617
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 4: Loss 0.6726
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 5: Loss 0.6070
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 6: Loss 0.5320
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+Iteration 7: Loss 0.4900
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 3: x.shape=torch.Size([4, 16, 224, 224])
+  0%|                                       | 0/50000 [00:32<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 132, in trainer_kits19
+    for sampled_batch in train_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

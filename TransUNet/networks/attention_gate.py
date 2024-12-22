@@ -24,13 +24,13 @@ class AttentionGate(nn.Module):
 
         # Attention map computation
         self.psi = nn.Sequential(
-            nn.ReLU(inplace=True),
+            nn.ReLU(inplace=False),  # Changed to inplace=False
             nn.Conv2d(inter_channels, 1, kernel_size=1, stride=1, padding=0, bias=True),
             nn.Sigmoid()
         )
 
         # Activation
-        self.relu = nn.ReLU(inplace=True)
+        self.relu = nn.ReLU(inplace=False)  # Changed to inplace=False
 
     def forward(self, x, gating):
         """
@@ -71,12 +71,12 @@ class DecoderBlockWithAttention(nn.Module):
             nn.Conv2d(in_channels + (skip_channels if not use_attention else 0), out_channels,
                       kernel_size=3, padding=1, bias=True),
             nn.BatchNorm2d(out_channels) if use_batchnorm else nn.Identity(),
-            nn.ReLU(inplace=True)
+            nn.ReLU(inplace=False)  # Changed to inplace=False
         )
         self.conv2 = nn.Sequential(
             nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1, bias=True),
             nn.BatchNorm2d(out_channels) if use_batchnorm else nn.Identity(),
-            nn.ReLU(inplace=True)
+            nn.ReLU(inplace=False)  # Changed to inplace=False
         )
         self.up = nn.UpsamplingBilinear2d(scale_factor=2)
 

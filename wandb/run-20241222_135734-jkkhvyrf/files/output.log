@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 82, in <module>
+    net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 441, in __init__
+    self.decoder = DecoderCupWithAttention(config)  # Use DecoderCupWithAttention
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 413, in __init__
+    [
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 414, in <listcomp>
+    DecoderBlockWithAttention(
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 361, in __init__
+    self.attention_gate = AttentionGate(skip_channels, out_channels) if use_attention and skip_channels > 0 else None
+TypeError: AttentionGate.__init__() missing 1 required positional argument: 'inter_channels'

@@ -12,6 +12,7 @@ from os.path import join as pjoin
 import torch
 import torch.nn as nn
 import numpy as np
+import torch.nn.functional as F
 
 from torch.nn import CrossEntropyLoss, Dropout, Softmax, Linear, Conv2d, LayerNorm
 from torch.nn.modules.utils import _pair
@@ -20,6 +21,7 @@ from . import vit_seg_configs as configs
 from .vit_seg_modeling_resnet_skip import ResNetV2
 from .attention_gate import AttentionGate
 
+torch.autograd.set_detect_anomaly(True)
 logger = logging.getLogger(__name__)
 
 
@@ -92,7 +94,6 @@ class Attention(nn.Module):
         attention_output = self.out(context_layer)
         attention_output = self.proj_dropout(attention_output)
         return attention_output, weights
-
 
 class Mlp(nn.Module):
     def __init__(self, config):
@@ -274,39 +275,12 @@ class Conv2dReLU(nn.Sequential):
             padding=padding,
             bias=not (use_batchnorm),
         )
-        relu = nn.ReLU(inplace=True)
+        relu = nn.ReLU(inplace=False)
 
         bn = nn.BatchNorm2d(out_channels)
 
         super(Conv2dReLU, self).__init__(conv, bn, relu)
 
-
-class DecoderBlock(nn.Module):
-    def __init__(self, in_channels, out_channels, skip_channels=0, use_batchnorm=True):
-        super().__init__()
-        self.conv1 = Conv2dReLU(
-            in_channels + skip_channels,  # Account for skip connections
-            out_channels,
-            kernel_size=3,
-            padding=1,
-            use_batchnorm=use_batchnorm,
-        )
-        self.conv2 = Conv2dReLU(
-            out_channels,
-            out_channels,
-            kernel_size=3,
-            padding=1,
-            use_batchnorm=use_batchnorm,
-        )
-        self.up = nn.UpsamplingBilinear2d(scale_factor=2)
-
-    def forward(self, x, skip=None):
-        x = self.up(x)
-        if skip is not None:
-            x = torch.cat([x, skip], dim=1)
-        x = self.conv1(x)
-        x = self.conv2(x)
-        return x
 
 class SegmentationHead(nn.Sequential):
 
@@ -315,46 +289,117 @@ class SegmentationHead(nn.Sequential):
         upsampling = nn.UpsamplingBilinear2d(scale_factor=upsampling) if upsampling > 1 else nn.Identity()
         super().__init__(conv2d, upsampling)
 
-class DecoderCup(nn.Module):
+class DecoderBlockWithAttention(nn.Module):
+    def __init__(self, in_channels, out_channels, skip_channels=0, use_attention=True, use_batchnorm=True):
+        super(DecoderBlockWithAttention, self).__init__()
+        self.use_attention = use_attention
+
+        # Attention gate for skip connection
+        self.attention_gate = (
+            AttentionGate(skip_channels, in_channels, inter_channels=skip_channels // 2)
+            if self.use_attention and skip_channels > 0
+            else None
+        )
+
+        # Compute the adjusted input channels for conv1
+        # After attention gating, skip_channels are already handled
+        adjusted_in_channels = in_channels + skip_channels
+
+        # Convolution layers
+        self.conv1 = nn.Sequential(
+            nn.Conv2d(adjusted_in_channels, out_channels, kernel_size=3, padding=1, bias=True),
+            nn.BatchNorm2d(out_channels) if use_batchnorm else nn.Identity(),
+            nn.ReLU(inplace=False),
+        )
+        self.conv2 = nn.Sequential(
+            nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1, bias=True),
+            nn.BatchNorm2d(out_channels) if use_batchnorm else nn.Identity(),
+            nn.ReLU(inplace=False),
+        )
+        self.up = nn.UpsamplingBilinear2d(scale_factor=2)
+
+    def forward(self, x, skip=None):
+        # Upsample the input
+        x = self.up(x)
+
+        # Align spatial size of x to skip, if needed
+        if skip is not None and x.shape[-2:] != skip.shape[-2:]:
+            x = F.interpolate(x, size=skip.shape[-2:], mode='bilinear', align_corners=True)
+
+        # Apply attention gate to skip connection, if enabled
+        if skip is not None:
+            if self.use_attention:
+                skip = self.attention_gate(skip, x)
+            x = torch.cat([x, skip], dim=1)  # Concatenate along the channel dimension
+
+        x = self.conv1(x)
+        x = self.conv2(x)
+        return x
+
+class DecoderCupWithAttention(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.config = config
-        head_channels = 512  # Target channels for decoder input
-        
-        # Ensure conv_more reduces transformer output to head_channels
+        head_channels = 512  # Target number of channels for the decoder input
+
+        # Reduce the transformer output channels to `head_channels`
         self.conv_more = Conv2dReLU(
-            in_channels=config.hidden_size,  # Transformer hidden size
-            out_channels=head_channels,     # Target for decoder input
+            in_channels=config.hidden_size,  # Transformer output channels
+            out_channels=head_channels,     # Target for the decoder input
             kernel_size=3,
             padding=1,
             use_batchnorm=True,
         )
-        
+
+        # Decoder configuration
         decoder_channels = config.decoder_channels
         in_channels = [head_channels] + list(decoder_channels[:-1])
         out_channels = decoder_channels
 
+        # Configure skip connections
         if self.config.n_skip != 0:
             skip_channels = self.config.skip_channels
-            for i in range(4 - self.config.n_skip):  # Adjust skip channels based on n_skip
+            for i in range(4 - self.config.n_skip):  # Disable skip connections beyond `n_skip`
                 skip_channels[3 - i] = 0
         else:
             skip_channels = [0, 0, 0, 0]
 
+        # Create decoder blocks with or without attention
         self.blocks = nn.ModuleList(
-            [DecoderBlock(in_ch, out_ch, sk_ch) for in_ch, out_ch, sk_ch in zip(in_channels, out_channels, skip_channels)]
+            [
+                DecoderBlockWithAttention(
+                    in_ch,                     # Input channels from the previous decoder block
+                    out_ch,                    # Output channels for this decoder block
+                    sk_ch,                     # Skip connection channels
+                    use_attention=config.use_attention,  # Toggle attention gate usage
+                )
+                for in_ch, out_ch, sk_ch in zip(in_channels, out_channels, skip_channels)
+            ]
         )
 
     def forward(self, hidden_states, features=None):
+        """
+        Forward pass for the decoder cup with optional attention gates.
+        
+        Args:
+            hidden_states (torch.Tensor): Output from the transformer encoder.
+            features (list[torch.Tensor], optional): Skip connections from the encoder.
+
+        Returns:
+            torch.Tensor: Final output from the decoder.
+        """
+        # Reshape transformer output to spatial dimensions
         B, n_patch, hidden = hidden_states.size()
         h, w = int(np.sqrt(n_patch)), int(np.sqrt(n_patch))
         x = hidden_states.permute(0, 2, 1).contiguous().view(B, hidden, h, w)
-        x = self.conv_more(x)  # Ensure reduction happens here
+        x = self.conv_more(x)
+
         for i, decoder_block in enumerate(self.blocks):
             skip = features[i] if (features is not None and i < len(features)) else None
             x = decoder_block(x, skip=skip)
-        return x
 
+        return x
+    
 class VisionTransformer(nn.Module):
     def __init__(self, config, img_size=224, num_classes=21843, zero_head=False, vis=False):
         super(VisionTransformer, self).__init__()
@@ -362,7 +407,7 @@ class VisionTransformer(nn.Module):
         self.zero_head = zero_head
         self.classifier = config.classifier
         self.transformer = Transformer(config, img_size, vis)
-        self.decoder = DecoderCup(config)
+        self.decoder = DecoderCupWithAttention(config)  # Use DecoderCupWithAttention
         self.segmentation_head = SegmentationHead(
             in_channels=config['decoder_channels'][-1],
             out_channels=config['n_classes'],
@@ -373,7 +418,7 @@ class VisionTransformer(nn.Module):
     def forward(self, x, return_attn=False):
         if x.size()[1] == 1:
             x = x.repeat(1, 3, 1, 1)
-        x, attn_weights, features = self.transformer(x)  # (B, n_patch, hidden)
+        x, attn_weights, features = self.transformer(x)
         x = self.decoder(x, features)
         logits = self.segmentation_head(x)
         if return_attn:
@@ -439,5 +484,3 @@ CONFIGS = {
     'R50-ViT-L_16': configs.get_r50_l16_config(),
     'testing': configs.get_testing(),
 }
-
-

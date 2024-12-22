@@ -1,0 +1,62 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=50000, max_epochs=150, batch_size=4, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits1', use_attention=1, exp='TU_KiTS19_224')
+No checkpoint or best model found. Starting training from scratch.
+18375 iterations per epoch. 50000 total iterations.
+  0%|                                       | 0/50000 [00:00<?, ?it/s]
+[DecoderCup] Before conv_more: x.shape=torch.Size([4, 768, 14, 14])
+[DecoderCup] After conv_more: x.shape=torch.Size([4, 512, 14, 14])
+[DecoderCup] Skip connection 0: skip.shape=torch.Size([4, 512, 28, 28])
+[DecoderCup] After block 0: x.shape=torch.Size([4, 256, 28, 28])
+[DecoderCup] Skip connection 1: skip.shape=torch.Size([4, 256, 56, 56])
+[DecoderCup] After block 1: x.shape=torch.Size([4, 128, 56, 56])
+[DecoderCup] Skip connection 2: skip.shape=torch.Size([4, 64, 112, 112])
+[DecoderCup] After block 2: x.shape=torch.Size([4, 64, 112, 112])
+  0%|                                       | 0/50000 [00:00<?, ?it/s]/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/autograd/__init__.py:251: UserWarning: Error detected in ReluBackward0. Traceback of forward call that caused the error:
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 136, in trainer_kits19
+    outputs, attn_weights = model(image_batch, return_attn=True)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 428, in forward
+    x = self.decoder(x, features)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 404, in forward
+    x = decoder_block(x, skip=skip)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 332, in forward
+    skip = self.attention_gate(skip, x)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/attention_gate.py", line 48, in forward
+    psi = self.relu(g1 + x1)  # Combine gating and skip
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 101, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/functional.py", line 1469, in relu
+    result = torch.relu_(input)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:114.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  0%|                                       | 0/50000 [00:28<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 142, in trainer_kits19
+    loss.backward()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [4, 32, 112, 112]], which is output 0 of ReluBackward0, is at version 2; expected version 1 instead. Hint: the backtrace further above shows the operation that failed to compute its gradient. The variable in question was changed in there or anywhere later. Good luck!
