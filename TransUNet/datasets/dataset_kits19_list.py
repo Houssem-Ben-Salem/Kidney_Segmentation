@@ -46,28 +46,44 @@ class KiTS19DatasetList(Dataset):
         case, slice_idx = self.slices[idx]
         case_path = os.path.join(self.base_dir, case)
 
-        # Load volume and segmentation
+        # Load volume and segmentation with error handling
         img_path = os.path.join(case_path, "imaging.nii.gz")
         seg_path = os.path.join(case_path, "segmentation.nii.gz")
-        volume = nib.load(img_path).get_fdata()
-        segmentation = nib.load(seg_path).get_fdata()
+        try:
+            volume = nib.load(img_path).get_fdata()
+            segmentation = nib.load(seg_path).get_fdata()
+        except Exception as e:
+            print(f"Error loading file: {img_path} or {seg_path}. Skipping. Error: {e}")
+            return self.__getitem__((idx + 1) % len(self))  # Skip to the next index
 
         # Normalize the entire volume
         volume = self._normalize(volume)
 
         # Extract the slice
         slice_idx = int(slice_idx)
-        image = volume[:, :, slice_idx]
-        label = segmentation[:, :, slice_idx]
+        try:
+            image = volume[:, :, slice_idx]
+            label = segmentation[:, :, slice_idx]
+        except IndexError as e:
+            print(f"Index error: {e}. Skipping slice {slice_idx} in case {case}.")
+            return self.__getitem__((idx + 1) % len(self))
 
         # Resize slices
         resize_factors = (self.slice_size[0] / image.shape[0], self.slice_size[1] / image.shape[1])
-        image = zoom(image, resize_factors, order=3)
-        label = zoom(label, resize_factors, order=0)
+        try:
+            image = zoom(image, resize_factors, order=3)
+            label = zoom(label, resize_factors, order=0)
+        except Exception as e:
+            print(f"Error resizing slice {slice_idx} in case {case}. Skipping. Error: {e}")
+            return self.__getitem__((idx + 1) % len(self))
 
         # Apply augmentation
         if self.augment:
-            image, label = self._augment(image, label)
+            try:
+                image, label = self._augment(image, label)
+            except Exception as e:
+                print(f"Error augmenting slice {slice_idx} in case {case}. Skipping. Error: {e}")
+                return self.__getitem__((idx + 1) % len(self))
 
         # Convert to tensors
         image = torch.from_numpy(image).float().unsqueeze(0)  # Add channel dimension
