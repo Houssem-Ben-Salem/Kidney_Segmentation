@@ -8,6 +8,7 @@ from torch.utils.data import DataLoader, Subset
 import matplotlib.pyplot as plt
 from tqdm import tqdm  # Import tqdm for the progress bar
 import os
+from scipy.spatial.distance import directed_hausdorff
 
 # Argument parser (reuse configurations from training)
 parser = argparse.ArgumentParser()
@@ -21,7 +22,8 @@ parser.add_argument('--vit_patches_size', type=int, default=16, help='ViT patch 
 parser.add_argument('--use_attention', type=int, default=0, help='Use attention gates in decoder (1 for Yes, 0 for No)')
 parser.add_argument('--checkpoint_path', type=str, default='./checkpoints_kits19_with_attention/best_model.pth', help='Path to the trained model checkpoint')
 parser.add_argument('--test_list', type=str, default='./lists_kits19/test.txt', help='Path to the test list file')
-parser.add_argument('--test_percentage', type=float, default=10.0, help='Percentage of the test dataset to use (0-100)')
+parser.add_argument('--test_percentage', type=float, default=1.0, help='Percentage of the test dataset to use (0-100)')
+parser.add_argument('--debug', type=bool, default=False, help='Enable debugging visualization and logging')
 args = parser.parse_args()
 
 # Load Model Configuration
@@ -45,9 +47,7 @@ state_dict = checkpoint
 pos_emb_key = 'transformer.embeddings.position_embeddings'
 if pos_emb_key in state_dict:
     pretrained_pos_emb = state_dict[pos_emb_key]
-    if pretrained_pos_emb.shape != model.state_dict()[pos_emb_key].shape:
-        print(f"Resizing position embeddings from {pretrained_pos_emb.shape} to {model.state_dict()[pos_emb_key].shape}.")
-        
+    if pretrained_pos_emb.shape != model.state_dict()[pos_emb_key].shape:        
         # Reshape position embeddings
         ntok_new = model.state_dict()[pos_emb_key].shape[1]
         ntok_old = pretrained_pos_emb.shape[1]
@@ -76,38 +76,25 @@ test_subset = Subset(test_dataset, subset_indices)
 # Create DataLoader for the subset
 test_loader = DataLoader(test_subset, batch_size=1, shuffle=False)
 
-# Function to Visualize Predictions
-def visualize_predictions(image, label, prediction, idx):
-    plt.figure(figsize=(15, 5))
+# Function to compute Hausdorff Distance
+def hausdorff_distance(pred_mask, true_mask):
+    pred_coords = np.argwhere(pred_mask)
+    true_coords = np.argwhere(true_mask)
 
-    # Input Image
-    plt.subplot(1, 3, 1)
-    plt.imshow(image[0], cmap='gray')  # Ensure image has at least 2D shape
-    plt.title("Input Image")
-    plt.axis("off")
+    if len(pred_coords) == 0 or len(true_coords) == 0:
+        return np.inf  # No overlap
 
-    # Ground Truth
-    plt.subplot(1, 3, 2)
-    plt.imshow(label, cmap='gray')
-    plt.title("Ground Truth")
-    plt.axis("off")
+    forward_hd = directed_hausdorff(pred_coords, true_coords)[0]
+    backward_hd = directed_hausdorff(true_coords, pred_coords)[0]
 
-    # Model Prediction
-    plt.subplot(1, 3, 3)
-    plt.imshow(prediction, cmap='gray')
-    plt.title("Prediction")
-    plt.axis("off")
-
-    # Save visualization or show it
-    plt.savefig(f'prediction_{idx}.png')
-    plt.show()
+    return max(forward_hd, backward_hd)
 
 # Enhanced Metrics Calculation Functions
 def compute_metrics(prediction, label, num_classes):
-    metrics = {"IoU": [], "Dice": [], "Precision": [], "Recall": [], "F1-Score": [], "Specificity": [], "Balanced Accuracy": []}
-    eps = 1e-6  # To avoid division by zero
+    metrics = {"IoU": [], "Dice": [], "Hausdorff Distance": []}
+    eps = 1e-6  # Small epsilon to avoid division by zero
 
-    for class_id in range(1, num_classes):  # Exclude background (class_id=0)
+    for class_id in range(num_classes):  # Include background (class_id=0)
         pred_mask = (prediction == class_id).astype(np.uint8)
         true_mask = (label == class_id).astype(np.uint8)
 
@@ -115,45 +102,47 @@ def compute_metrics(prediction, label, num_classes):
         union = np.logical_or(pred_mask, true_mask).sum()
         pred_sum = pred_mask.sum()
         true_sum = true_mask.sum()
-        tn = np.logical_and(np.logical_not(pred_mask), np.logical_not(true_mask)).sum()  # True negatives
-        fp = pred_mask.sum() - intersection  # False positives
-        fn = true_sum - intersection  # False negatives
 
         # IoU
-        iou = intersection / (union + eps)
+        if union > 0:
+            iou = intersection / (union + eps)
+        else:
+            iou = 1.0 if class_id == 0 else 0.0  # Perfect background match or no foreground
         metrics["IoU"].append(iou)
 
         # Dice
-        dice = (2 * intersection) / (pred_sum + true_sum + eps)
+        if pred_sum + true_sum > 0:
+            dice = (2 * intersection) / (pred_sum + true_sum + eps)
+        else:
+            dice = 1.0 if class_id == 0 else 0.0  # Perfect background match or no foreground
         metrics["Dice"].append(dice)
 
-        # Precision
-        precision = intersection / (pred_sum + eps)
-        metrics["Precision"].append(precision)
-
-        # Recall
-        recall = intersection / (true_sum + eps)
-        metrics["Recall"].append(recall)
-
-        # F1-Score
-        f1_score = (2 * precision * recall) / (precision + recall + eps)
-        metrics["F1-Score"].append(f1_score)
-
-        # Specificity
-        specificity = tn / (tn + fp + eps)
-        metrics["Specificity"].append(specificity)
-
-        # Balanced Accuracy
-        balanced_accuracy = (recall + specificity) / 2
-        metrics["Balanced Accuracy"].append(balanced_accuracy)
+        # Hausdorff Distance
+        if pred_sum > 0 and true_sum > 0:
+            hd = hausdorff_distance(pred_mask, true_mask)
+        else:
+            hd = float('nan')  # Undefined for empty masks
+        metrics["Hausdorff Distance"].append(hd)
 
     return metrics
 
-# Initialize accumulators for metrics
-overall_metrics = {key: [] for key in ["IoU", "Dice", "Precision", "Recall", "F1-Score", "Specificity", "Balanced Accuracy"]}
-case_metrics = {}
+# Enhanced metrics aggregation to ignore NaN values
+def aggregate_metrics(overall_metrics):
+    avg_metrics = {}
+    for key in overall_metrics:
+        class_metrics = np.array(overall_metrics[key])
+        # Compute mean, ignoring NaN values for Hausdorff Distance
+        avg_metrics[key] = np.nanmean(class_metrics, axis=0)
+    return avg_metrics
+
+# Debugging Function
+def log_debug_info(image, label, prediction, metrics, idx):
+    print(f"Sample Index: {idx}")
+    print(f"Metrics: {metrics}")
+    #visualize_predictions(image, label, prediction, idx)
 
 # Add a progress bar to iterate over the test_loader
+overall_metrics = {"IoU": [], "Dice": [], "Hausdorff Distance": []}
 with torch.no_grad():
     for idx, sample in enumerate(tqdm(test_loader, desc="Processing Test Dataset", unit="sample")):
         image = sample["image"].to(device)
@@ -170,37 +159,24 @@ with torch.no_grad():
         for key in metrics:
             overall_metrics[key].append(metrics[key])
 
-        # Save per-case metrics
-        case_name = test_dataset.slices[subset_indices[idx]][0]  # Extract case name from dataset
-        case_metrics[case_name] = metrics
+        # Debugging visualization for samples with poor metrics
+        if args.debug:
+            log_debug_info(image.cpu().numpy(), label, prediction, metrics, idx)
 
-# Average metrics over the dataset
-avg_metrics = {key: np.mean(overall_metrics[key], axis=0) for key in overall_metrics}
+# Compute average metrics across the dataset per class
+avg_metrics = aggregate_metrics(overall_metrics)
 
-# Print the average metrics
-print("Average Metrics per Class:")
+# Print average metrics per class
+print("\nAverage Metrics per Class:")
 for class_id in range(1, args.num_classes):  # Exclude background (class_id=0)
-    class_name = {1: "Kidney", 2: "Tumor"}[class_id]  # Map class IDs to names
+    class_name = {1: "Kidney", 2: "Tumor"}[class_id]
     print(f"Class {class_id} ({class_name}):")
     print(f"  IoU: {avg_metrics['IoU'][class_id - 1]:.4f}")
     print(f"  Dice: {avg_metrics['Dice'][class_id - 1]:.4f}")
-    print(f"  Precision: {avg_metrics['Precision'][class_id - 1]:.4f}")
-    print(f"  Recall: {avg_metrics['Recall'][class_id - 1]:.4f}")
-    print(f"  F1-Score: {avg_metrics['F1-Score'][class_id - 1]:.4f}")
-    print(f"  Specificity: {avg_metrics['Specificity'][class_id - 1]:.4f}")
-    print(f"  Balanced Accuracy: {avg_metrics['Balanced Accuracy'][class_id - 1]:.4f}")
+    print(f"  Hausdorff Distance: {avg_metrics['Hausdorff Distance'][class_id - 1]:.4f}")
 
-# Print per-case metrics
-print("\nPer-Case Metrics:")
-for case, metrics in case_metrics.items():
-    print(f"Case: {case}")
-    for class_id in range(1, args.num_classes):  # Exclude background (class_id=0)
-        class_name = {1: "Kidney", 2: "Tumor"}[class_id]
-        print(f"  Class {class_id} ({class_name}):")
-        print(f"    IoU: {metrics['IoU'][class_id - 1]:.4f}")
-        print(f"    Dice: {metrics['Dice'][class_id - 1]:.4f}")
-        print(f"    Precision: {metrics['Precision'][class_id - 1]:.4f}")
-        print(f"    Recall: {metrics['Recall'][class_id - 1]:.4f}")
-        print(f"    F1-Score: {metrics['F1-Score'][class_id - 1]:.4f}")
-        print(f"    Specificity: {metrics['Specificity'][class_id - 1]:.4f}")
-        print(f"    Balanced Accuracy: {metrics['Balanced Accuracy'][class_id - 1]:.4f}")
+# Print overall average metrics across all classes
+overall_avg_metrics = {key: np.mean(avg_metrics[key]) for key in avg_metrics}
+print("\nOverall Average Metrics Across All Classes:")
+for key, value in overall_avg_metrics.items():
+    print(f"  {key}: {value:.4f}")
