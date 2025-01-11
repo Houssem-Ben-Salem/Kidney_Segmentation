@@ -1,0 +1,121 @@
+{
+    "os": "Linux-6.8.0-51-generic-x86_64-with-glibc2.35",
+    "python": "3.10.9",
+    "heartbeatAt": "2025-01-11T02:58:11.489041",
+    "startedAt": "2025-01-11T02:58:11.148725",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--dataset",
+        "KiTS19",
+        "--img_size",
+        "224",
+        "--batch_size",
+        "1",
+        "--max_iterations",
+        "30000",
+        "--checkpoint_dir",
+        "./checkpoints_kits19",
+        "--use_attention",
+        "0"
+    ],
+    "state": "running",
+    "program": "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py",
+    "codePathLocal": "TransUNet/train.py",
+    "codePath": "TransUNet/train.py",
+    "git": {
+        "remote": "https://github.com/Houssem-Ben-Salem/Kidney_Segmentation.git",
+        "commit": "ebdcd0812f0d38b22e302a15032c2e2c66515bf5"
+    },
+    "email": "houssem.bensalem@supcom.tn",
+    "root": "/home/hous/Desktop/Kidney_Segmentation",
+    "host": "HOUS-GF63-Thin-10SCSR",
+    "username": "hous",
+    "executable": "/home/hous/anaconda3/envs/torch/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 4.22075,
+        "min": 800.0,
+        "max": 5000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4.342,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.342,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.326,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.286,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.2,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.199,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.342,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.323,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.199,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.201,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.2,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.2,
+            "min": 800.0,
+            "max": 5000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 467.8899917602539,
+            "used": 426.0597343444824
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1650 Ti with Max-Q Design",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1650 Ti with Max-Q Design",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 23.235424041748047
+    }
+}

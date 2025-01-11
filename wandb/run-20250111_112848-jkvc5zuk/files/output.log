@@ -1,0 +1,87 @@
+
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', use_attention=0, exp='TU_KiTS19_224', save_interval=2000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Training Progress:   1%|          | 225/30000 [02:36<5:11:56,  1.59it/s, loss=0.4195, lr=0.000881]Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 175, in trainer_kits19
+    optimizer.step()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 68, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/optim/optimizer.py", line 373, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/optim/optimizer.py", line 76, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/optim/adamw.py", line 173, in step
+    self._init_group(
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/optim/adamw.py", line 134, in _init_group
+    exp_avgs.append(state["exp_avg"])
+KeyboardInterrupt

@@ -45,6 +45,8 @@ parser.add_argument('--checkpoint_dir', type=str,
                     default='./checkpoints', help='directory to save/load model checkpoints')
 parser.add_argument('--use_attention', type=int, default=0, 
                     help='Use Attention Gates in the decoder (1 for Yes, 0 for No)')
+parser.add_argument('--val_interval', type=int,
+    default=500, help='How often to run validation')
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -67,7 +69,21 @@ if __name__ == "__main__":
     os.makedirs(args.checkpoint_dir, exist_ok=True)
 
     # Initialize W&B for logging
-    wandb.init(project="KiTS19-Segmentation", name=args.exp, config=vars(args))
+    wandb.init(
+    project="KiTS19-Segmentation",
+    name=args.exp,
+    config={
+        **vars(args),
+        'model_type': 'TransUNet',
+        'augmentations': 'moderate',
+        'class_weights': [0.01, 1.45, 6.25],
+        'loss_weights': {
+            'ce_loss': 0.3,
+            'dice_loss': 0.5,
+            'focal_loss': 0.2
+        }
+    }
+    )
 
     # Load model configuration
     config_vit = CONFIGS_ViT_seg[args.vit_name]

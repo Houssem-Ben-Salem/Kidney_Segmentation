@@ -1,0 +1,10 @@
+
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', use_attention=0, exp='TU_KiTS19_224')
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 102, in trainer_kits19
+    class_weights = calculate_class_weights(train_dataset)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 29, in calculate_class_weights
+    class_counts = np.zeros(dataset.num_classes)
+AttributeError: 'KiTS19DatasetList' object has no attribute 'num_classes'

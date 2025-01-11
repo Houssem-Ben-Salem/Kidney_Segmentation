@@ -1,0 +1,28 @@
+
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', use_attention=0, exp='TU_KiTS19_224')
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 109, in trainer_kits19
+    class_weights = calculate_class_weights(train_dataset)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 31, in calculate_class_weights
+    for sample in dataset:
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/datasets/dataset_kits19_list.py", line 54, in __getitem__
+    volume = nib.load(img_path).get_fdata()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/nibabel/dataobj_images.py", line 373, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/nibabel/arrayproxy.py", line 457, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/nibabel/arrayproxy.py", line 424, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/nibabel/arrayproxy.py", line 394, in _get_unscaled
+    return array_from_file(
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/nibabel/volumeutils.py", line 465, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/gzip.py", line 301, in read
+    return self._buffer.read(size)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/gzip.py", line 496, in read
+    uncompress = self._decompressor.decompress(buf, size)
+KeyboardInterrupt

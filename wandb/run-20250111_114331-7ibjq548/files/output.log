@@ -1,0 +1,33 @@
+
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', use_attention=0, exp='TU_KiTS19_224', save_interval=2000)
+
+Training Progress:   0%|           | 1/30000 [00:03<25:39:07,  3.08s/it, loss=0.8124, lr=0.001000]Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 157, in trainer_kits19
+    outputs = model(image_batch)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 421, in forward
+    x, attn_weights, features = self.transformer(x)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 255, in forward
+    embedding_output, features = self.embeddings(input_ids)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling.py", line 157, in forward
+    x, features = self.hybrid_model(x)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/networks/vit_seg_modeling_resnet_skip.py", line 153, in forward
+    assert pad < 3 and pad > 0, "x {} should {}".format(x.size(), right_size)
+AssertionError: x torch.Size([1, 512, 28, 28]) should 27

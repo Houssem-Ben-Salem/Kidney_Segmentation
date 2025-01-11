@@ -1,0 +1,27 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', use_attention=0, exp='TU_KiTS19_224', save_interval=2000)
+Adjusted slice size to: (224, 224)
+Adjusted slice size to: (224, 224)
+Training Progress:   0%|           | 1/30000 [00:03<25:40:19,  3.08s/it, loss=0.8124, lr=0.001000]Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 149, in trainer_kits19
+    for sampled_batch in train_loader:
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1325, in _next_data
+    return self._process_data(data)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+AssertionError: Caught AssertionError in DataLoader worker process 1.
+Original Traceback (most recent call last):
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/datasets/dataset_kits19_list.py", line 150, in __getitem__
+    assert image.shape == self.slice_size, f"Image shape {image.shape} != {self.slice_size}"
+AssertionError: Image shape (223, 223) != (224, 224)

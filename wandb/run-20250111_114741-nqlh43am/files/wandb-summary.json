@@ -1,0 +1,1 @@
+{"Train/Loss": 0.6929888725280762, "Train/CE_Loss": 1.1399929523468018, "Train/Dice_Loss": 0.6309769153594971, "Train/Focal_Loss": 0.17751283943653107, "Train/LR": 0.0008381411941873378, "Iteration": 265, "_timestamp": 1736614247.4689164, "_runtime": 186.06701350212097, "_step": 264, "_wandb": {"runtime": 187}}

@@ -1,0 +1,253 @@
+2025-01-10 18:10:21,243 INFO    StreamThr :182804 [internal.py:wandb_internal():85] W&B internal server running at pid: 182804, started at: 2025-01-10 18:10:21.241604
+2025-01-10 18:10:21,248 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status
+2025-01-10 18:10:21,259 INFO    WriterThread:182804 [datastore.py:open_for_write():87] open: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/run-toa15z4f.wandb
+2025-01-10 18:10:21,260 DEBUG   SenderThread:182804 [sender.py:send():391] send: header
+2025-01-10 18:10:21,272 DEBUG   SenderThread:182804 [sender.py:send():391] send: run
+2025-01-10 18:10:21,854 INFO    SenderThread:182804 [dir_watcher.py:__init__():211] watching files in: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files
+2025-01-10 18:10:21,854 INFO    SenderThread:182804 [sender.py:_start_run_threads():1200] run started: toa15z4f with start time 1736550621.252587
+2025-01-10 18:10:21,882 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: check_version
+2025-01-10 18:10:21,883 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: check_version
+2025-01-10 18:10:22,091 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: run_start
+2025-01-10 18:10:22,130 DEBUG   HandlerThread:182804 [system_info.py:__init__():26] System info init
+2025-01-10 18:10:22,131 DEBUG   HandlerThread:182804 [system_info.py:__init__():41] System info init done
+2025-01-10 18:10:22,131 INFO    HandlerThread:182804 [system_monitor.py:start():194] Starting system monitor
+2025-01-10 18:10:22,131 INFO    SystemMonitor:182804 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-01-10 18:10:22,132 INFO    HandlerThread:182804 [system_monitor.py:probe():214] Collecting system info
+2025-01-10 18:10:22,133 INFO    SystemMonitor:182804 [interfaces.py:start():188] Started cpu monitoring
+2025-01-10 18:10:22,134 INFO    SystemMonitor:182804 [interfaces.py:start():188] Started disk monitoring
+2025-01-10 18:10:22,136 INFO    SystemMonitor:182804 [interfaces.py:start():188] Started gpu monitoring
+2025-01-10 18:10:22,140 INFO    SystemMonitor:182804 [interfaces.py:start():188] Started memory monitoring
+2025-01-10 18:10:22,142 INFO    SystemMonitor:182804 [interfaces.py:start():188] Started network monitoring
+2025-01-10 18:10:22,148 DEBUG   HandlerThread:182804 [system_info.py:probe():152] Probing system
+2025-01-10 18:10:22,149 DEBUG   HandlerThread:182804 [system_info.py:_probe_git():137] Probing git
+2025-01-10 18:10:22,153 DEBUG   HandlerThread:182804 [system_info.py:_probe_git():145] Probing git done
+2025-01-10 18:10:22,153 DEBUG   HandlerThread:182804 [system_info.py:probe():200] Probing system done
+2025-01-10 18:10:22,153 DEBUG   HandlerThread:182804 [system_monitor.py:probe():223] {'os': 'Linux-6.8.0-51-generic-x86_64-with-glibc2.35', 'python': '3.10.9', 'heartbeatAt': '2025-01-10T23:10:22.148252', 'startedAt': '2025-01-10T23:10:21.229473', 'docker': None, 'cuda': None, 'args': ('--dataset', 'KiTS19', '--img_size', '224', '--batch_size', '4', '--max_iterations', '30000', '--base_lr', '1e-4', '--num_classes', '3', '--checkpoint_dir', './checkpoints_kits19', '--use_attention', '0', '--deterministic', '1', '--vit_name', 'R50-ViT-B_16', '--n_skip', '3', '--seed', '42'), 'state': 'running', 'program': '/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py', 'codePathLocal': 'TransUNet/train.py', 'codePath': 'TransUNet/train.py', 'git': {'remote': 'https://github.com/Houssem-Ben-Salem/Kidney_Segmentation.git', 'commit': 'ebdcd0812f0d38b22e302a15032c2e2c66515bf5'}, 'email': 'houssem.bensalem@supcom.tn', 'root': '/home/hous/Desktop/Kidney_Segmentation', 'host': 'HOUS-GF63-Thin-10SCSR', 'username': 'hous', 'executable': '/home/hous/anaconda3/envs/torch/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2.844416666666666, 'min': 800.0, 'max': 5000.0}, 'cpu_freq_per_core': [{'current': 0.866, 'min': 800.0, 'max': 5000.0}, {'current': 4.503, 'min': 800.0, 'max': 5000.0}, {'current': 4.493, 'min': 800.0, 'max': 5000.0}, {'current': 4.471, 'min': 800.0, 'max': 5000.0}, {'current': 4.491, 'min': 800.0, 'max': 5000.0}, {'current': 4.502, 'min': 800.0, 'max': 5000.0}, {'current': 4.303, 'min': 800.0, 'max': 5000.0}, {'current': 0.808, 'min': 800.0, 'max': 5000.0}, {'current': 4.5, 'min': 800.0, 'max': 5000.0}, {'current': 0.8, 'min': 800.0, 'max': 5000.0}, {'current': 0.8, 'min': 800.0, 'max': 5000.0}, {'current': 0.799, 'min': 800.0, 'max': 5000.0}], 'disk': {'/': {'total': 467.8899917602539, 'used': 426.0527229309082}}, 'gpu': 'NVIDIA GeForce GTX 1650 Ti with Max-Q Design', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1650 Ti with Max-Q Design', 'memory_total': 4294967296}], 'memory': {'total': 23.235424041748047}}
+2025-01-10 18:10:22,153 INFO    HandlerThread:182804 [system_monitor.py:probe():224] Finished collecting system info
+2025-01-10 18:10:22,153 INFO    HandlerThread:182804 [system_monitor.py:probe():227] Publishing system info
+2025-01-10 18:10:22,153 DEBUG   HandlerThread:182804 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-01-10 18:10:22,859 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/conda-environment.yaml
+2025-01-10 18:10:34,593 DEBUG   HandlerThread:182804 [system_info.py:_save_conda():224] Saving conda packages done
+2025-01-10 18:10:34,594 INFO    HandlerThread:182804 [system_monitor.py:probe():229] Finished publishing system info
+2025-01-10 18:10:34,621 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:34,621 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: keepalive
+2025-01-10 18:10:34,622 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:34,622 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: keepalive
+2025-01-10 18:10:34,623 DEBUG   SenderThread:182804 [sender.py:send():391] send: files
+2025-01-10 18:10:34,623 INFO    SenderThread:182804 [sender.py:_save_file():1466] saving file wandb-metadata.json with policy now
+2025-01-10 18:10:34,856 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/conda-environment.yaml
+2025-01-10 18:10:34,857 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/wandb-metadata.json
+2025-01-10 18:10:35,039 INFO    wandb-upload_0:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/9jkuynur-wandb-metadata.json
+2025-01-10 18:10:35,187 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: python_packages
+2025-01-10 18:10:35,187 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:10:35,187 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: python_packages
+2025-01-10 18:10:35,188 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:35,188 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:10:35,347 DEBUG   SenderThread:182804 [sender.py:send():391] send: telemetry
+2025-01-10 18:10:35,857 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/requirements.txt
+2025-01-10 18:10:36,187 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:37,188 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:37,348 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:38,188 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:39,066 DEBUG   SenderThread:182804 [sender.py:send():391] send: telemetry
+2025-01-10 18:10:39,137 DEBUG   SenderThread:182804 [sender.py:send():391] send: telemetry
+2025-01-10 18:10:39,195 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:39,859 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/output.log
+2025-01-10 18:10:40,195 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:41,196 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:41,860 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/output.log
+2025-01-10 18:10:42,196 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:43,189 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:43,196 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:44,196 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:45,196 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:46,197 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:47,197 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:48,189 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:48,197 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:49,197 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:50,188 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:10:50,189 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:10:50,229 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:51,201 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:52,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:53,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:53,407 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:53,876 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/config.yaml
+2025-01-10 18:10:54,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:55,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:56,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:57,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:58,198 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:10:59,190 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:10:59,199 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:00,199 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:01,199 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:02,200 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:03,200 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:04,200 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:05,192 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:05,195 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:11:05,196 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:11:05,236 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:06,201 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:07,201 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:08,203 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:09,201 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:10,202 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:11,190 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:11,202 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:12,203 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:13,202 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:14,202 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:15,203 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:16,192 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:16,207 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:17,204 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:18,204 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:19,205 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:20,188 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:11:20,189 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:11:20,229 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:21,206 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:21,273 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:21,907 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/output.log
+2025-01-10 18:11:22,144 DEBUG   SystemMonitor:182804 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-01-10 18:11:22,154 DEBUG   SenderThread:182804 [sender.py:send():391] send: stats
+2025-01-10 18:11:22,215 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:23,209 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:23,911 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/output.log
+2025-01-10 18:11:24,209 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:24,342 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: partial_history
+2025-01-10 18:11:24,345 DEBUG   SenderThread:182804 [sender.py:send():391] send: history
+2025-01-10 18:11:24,345 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: summary_record
+2025-01-10 18:11:24,351 INFO    SenderThread:182804 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2025-01-10 18:11:24,912 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/wandb-summary.json
+2025-01-10 18:11:25,215 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:26,217 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:26,914 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:27,175 DEBUG   SenderThread:182804 [sender.py:send():391] send: files
+2025-01-10 18:11:27,178 INFO    SenderThread:182804 [sender.py:_save_file():1466] saving file media/images/Segmentation/Input_1_93a2f26b60bd17bfa204.png with policy now
+2025-01-10 18:11:27,214 DEBUG   SenderThread:182804 [sender.py:send():391] send: files
+2025-01-10 18:11:27,214 INFO    SenderThread:182804 [sender.py:_save_file():1466] saving file media/images/Segmentation/Ground Truth_1_a9150214f5dcb3f11a81.png with policy now
+2025-01-10 18:11:27,233 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:27,239 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: partial_history
+2025-01-10 18:11:27,254 DEBUG   SenderThread:182804 [sender.py:send():391] send: files
+2025-01-10 18:11:27,254 INFO    SenderThread:182804 [sender.py:_save_file():1466] saving file media/images/Segmentation/Prediction_1_6b22615febffaa0d0140.png with policy now
+2025-01-10 18:11:27,254 DEBUG   SenderThread:182804 [sender.py:send():391] send: history
+2025-01-10 18:11:27,264 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: summary_record
+2025-01-10 18:11:27,265 INFO    SenderThread:182804 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2025-01-10 18:11:27,551 INFO    wandb-upload_0:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/f5wtlua0-media/images/Segmentation/Input_1_93a2f26b60bd17bfa204.png
+2025-01-10 18:11:27,673 INFO    wandb-upload_2:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/a80syiyo-media/images/Segmentation/Prediction_1_6b22615febffaa0d0140.png
+2025-01-10 18:11:27,684 INFO    wandb-upload_1:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/6b7h3qb4-media/images/Segmentation/Ground Truth_1_a9150214f5dcb3f11a81.png
+2025-01-10 18:11:27,917 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/wandb-summary.json
+2025-01-10 18:11:27,918 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/output.log
+2025-01-10 18:11:27,918 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/media/images/Segmentation/Ground Truth_1_a9150214f5dcb3f11a81.png
+2025-01-10 18:11:27,918 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/media/images/Segmentation/Input_1_93a2f26b60bd17bfa204.png
+2025-01-10 18:11:27,918 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/media/images/Segmentation/Prediction_1_6b22615febffaa0d0140.png
+2025-01-10 18:11:27,919 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/media
+2025-01-10 18:11:27,919 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/media/images/Segmentation
+2025-01-10 18:11:27,919 INFO    Thread-12 :182804 [dir_watcher.py:_on_file_created():271] file/dir created: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/files/media/images
+2025-01-10 18:11:28,238 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:28,290 INFO    wandb-upload_0:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/v3jy8w2x-media/images/Segmentation/Ground Truth_1_a9150214f5dcb3f11a81.png
+2025-01-10 18:11:28,295 INFO    wandb-upload_1:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/94iw0xof-media/images/Segmentation/Prediction_1_6b22615febffaa0d0140.png
+2025-01-10 18:11:28,296 INFO    wandb-upload_2:182804 [upload_job.py:push():130] Uploaded file /tmp/tmp79nzkt0qwandb/bkei4wjr-media/images/Segmentation/Input_1_93a2f26b60bd17bfa204.png
+2025-01-10 18:11:29,226 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:30,228 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:31,230 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:32,195 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:32,227 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:33,227 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:34,228 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:35,191 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:11:35,196 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:11:35,232 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:36,228 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:37,228 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:37,333 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:38,235 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:39,229 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:40,229 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:41,235 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:42,232 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:43,196 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:43,233 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:44,232 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:45,235 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:46,235 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:47,237 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:48,201 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:48,235 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:49,236 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:50,195 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:11:50,195 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:11:50,243 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:51,236 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:52,176 DEBUG   SenderThread:182804 [sender.py:send():391] send: stats
+2025-01-10 18:11:52,236 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:53,256 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:54,187 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:54,261 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:55,256 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:56,260 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:57,256 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:58,257 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:11:59,199 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:11:59,257 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:00,257 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:01,258 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:02,270 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:03,257 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:04,201 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:12:04,257 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:05,194 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:12:05,194 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:12:05,277 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:06,448 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:20,702 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:20,715 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:12:20,717 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: keepalive
+2025-01-10 18:12:20,719 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:12:20,721 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:12:21,702 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:22,204 DEBUG   SenderThread:182804 [sender.py:send():391] send: stats
+2025-01-10 18:12:22,700 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:23,702 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:24,702 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:25,702 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:26,694 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:12:26,703 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:27,703 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:28,703 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:29,703 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:30,703 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:31,701 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:12:31,706 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:32,706 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:35,221 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:35,833 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-10 18:12:35,853 DEBUG   SenderThread:182804 [sender.py:send_request():418] send_request: stop_status
+2025-01-10 18:12:41,168 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:41,360 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:12:42,142 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:43,142 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:44,143 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:45,143 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:46,144 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-10 18:12:47,133 DEBUG   HandlerThread:182804 [handler.py:handle_request():158] handle_request: status_report
+2025-01-10 18:12:47,145 INFO    memory    :182804 [interfaces.py:monitor():138] Process proc.memory.rssMB has exited.
+2025-01-10 18:12:47,146 DEBUG   SystemMonitor:182804 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-01-10 18:12:47,146 DEBUG   SystemMonitor:182804 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-01-10 18:12:47,148 DEBUG   SenderThread:182804 [sender.py:send():391] send: stats
+2025-01-10 18:12:48,194 WARNING StreamThr :182804 [internal.py:is_dead():413] Internal process exiting, parent pid 182713 disappeared
+2025-01-10 18:12:48,195 ERROR   StreamThr :182804 [internal.py:wandb_internal():151] Internal process shutdown.
+2025-01-10 18:12:49,139 INFO    MainThread:182804 [internal.py:handle_exit():75] Internal process exited
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [handler.py:finish():880] shutting down handler
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [system_monitor.py:finish():203] Stopping system monitor
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [interfaces.py:finish():200] Joined cpu monitor
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [interfaces.py:finish():200] Joined disk monitor
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [interfaces.py:finish():200] Joined gpu monitor
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [interfaces.py:finish():200] Joined memory monitor
+2025-01-10 18:12:49,148 INFO    HandlerThread:182804 [interfaces.py:finish():200] Joined network monitor
+2025-01-10 18:12:49,149 INFO    WriterThread:182804 [datastore.py:close():296] close: /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/run-toa15z4f.wandb
+2025-01-10 18:12:49,149 INFO    SenderThread:182804 [sender.py:finish():1631] shutting down sender

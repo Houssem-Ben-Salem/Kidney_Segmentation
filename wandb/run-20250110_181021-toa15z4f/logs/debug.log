@@ -1,0 +1,28 @@
+2025-01-10 18:10:21,233 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Current SDK version is 0.17.7
+2025-01-10 18:10:21,233 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Configure stats pid to 182713
+2025-01-10 18:10:21,233 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Loading settings from /home/hous/.config/wandb/settings
+2025-01-10 18:10:21,233 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Loading settings from /home/hous/Desktop/Kidney_Segmentation/wandb/settings
+2025-01-10 18:10:21,233 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-01-10 18:10:21,233 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-01-10 18:10:21,234 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'TransUNet/train.py', 'program_abspath': '/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py', 'program': '/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py'}
+2025-01-10 18:10:21,234 INFO    MainThread:182713 [wandb_setup.py:_flush():76] Applying login settings: {}
+2025-01-10 18:10:21,234 INFO    MainThread:182713 [wandb_init.py:_log_setup():524] Logging user logs to /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/logs/debug.log
+2025-01-10 18:10:21,234 INFO    MainThread:182713 [wandb_init.py:_log_setup():525] Logging internal logs to /home/hous/Desktop/Kidney_Segmentation/wandb/run-20250110_181021-toa15z4f/logs/debug-internal.log
+2025-01-10 18:10:21,234 INFO    MainThread:182713 [wandb_init.py:init():607] calling init triggers
+2025-01-10 18:10:21,234 INFO    MainThread:182713 [wandb_init.py:init():614] wandb.init called with sweep_config: {}
+config: {'root_path': 'kits19/data', 'list_dir': './lists_kits19', 'dataset': 'KiTS19', 'num_classes': 3, 'max_iterations': 30000, 'max_epochs': 150, 'batch_size': 4, 'n_gpu': 1, 'deterministic': 1, 'base_lr': 0.0001, 'img_size': 224, 'seed': 42, 'n_skip': 3, 'vit_name': 'R50-ViT-B_16', 'vit_patches_size': 16, 'checkpoint_dir': './checkpoints_kits19', 'use_attention': 0, 'exp': 'TU_KiTS19_224'}
+2025-01-10 18:10:21,235 INFO    MainThread:182713 [wandb_init.py:init():657] starting backend
+2025-01-10 18:10:21,235 INFO    MainThread:182713 [wandb_init.py:init():661] setting up manager
+2025-01-10 18:10:21,238 INFO    MainThread:182713 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-10 18:10:21,252 INFO    MainThread:182713 [wandb_init.py:init():669] backend started and connected
+2025-01-10 18:10:21,258 INFO    MainThread:182713 [wandb_init.py:init():764] updated telemetry
+2025-01-10 18:10:21,271 INFO    MainThread:182713 [wandb_init.py:init():797] communicating run to backend with 90.0 second timeout
+2025-01-10 18:10:21,881 INFO    MainThread:182713 [wandb_run.py:_on_init():2479] communicating current version
+2025-01-10 18:10:22,077 INFO    MainThread:182713 [wandb_run.py:_on_init():2488] got version response upgrade_message: "wandb version 0.19.2 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-01-10 18:10:22,077 INFO    MainThread:182713 [wandb_init.py:init():848] starting run threads in backend
+2025-01-10 18:10:35,187 INFO    MainThread:182713 [wandb_run.py:_console_start():2457] atexit reg
+2025-01-10 18:10:35,187 INFO    MainThread:182713 [wandb_run.py:_redirect():2303] redirect: wrap_raw
+2025-01-10 18:10:35,187 INFO    MainThread:182713 [wandb_run.py:_redirect():2368] Wrapping output streams.
+2025-01-10 18:10:35,187 INFO    MainThread:182713 [wandb_run.py:_redirect():2393] Redirects installed.
+2025-01-10 18:10:35,189 INFO    MainThread:182713 [wandb_init.py:init():891] run started, returning control to user process

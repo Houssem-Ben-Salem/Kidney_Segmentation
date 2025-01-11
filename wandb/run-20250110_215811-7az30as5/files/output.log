@@ -1,0 +1,33 @@
+Namespace(root_path='kits19/data', list_dir='./lists_kits19', dataset='KiTS19', num_classes=3, max_iterations=30000, max_epochs=150, batch_size=1, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, n_skip=3, vit_name='R50-ViT-B_16', vit_patches_size=16, checkpoint_dir='./checkpoints_kits19', use_attention=0, exp='TU_KiTS19_224')
+Training configuration:
+Total iterations: 30000
+Iterations per epoch: 32975
+Number of epochs: 1
+Initial LR: 0.000400
+Max LR: 0.01
+Final LR: 0.000001
+  0%|                                                                   | 0/30000 [00:00<?, ?it/s]/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/pandas/core/arrays/masked.py:60: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.5' currently installed).
+  from pandas.core import (
+Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+NumExpr defaulting to 8 threads.
+  0%|                                                                   | 0/30000 [08:14<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/train.py", line 86, in <module>
+    trainer_kits19(args, net)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 182, in trainer_kits19
+    val_loss, class_dice = validate(val_loader, model, loss_fn, num_classes)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 40, in validate
+    loss = loss_fn(outputs, labels)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/trainer.py", line 26, in forward
+    dice_loss = self.dice_loss(outputs, targets, softmax=True)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/hous/anaconda3/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hous/Desktop/Kidney_Segmentation/TransUNet/utils.py", line 43, in forward
+    class_wise_dice.append(1.0 - dice.item())
+KeyboardInterrupt
