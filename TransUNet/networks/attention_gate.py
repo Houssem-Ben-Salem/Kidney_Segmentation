@@ -49,34 +49,97 @@ class AttentionGate(nn.Module):
         attention = self.psi(psi)  # Generate attention map
         return x * attention  # Apply attention to skip connection
 
+class EnhancedAttentionGate(nn.Module):
+    def __init__(self, in_channels, gating_channels, inter_channels):
+        """
+        Enhanced Attention Gate with both spatial and channel attention.
+        
+        Args:
+            in_channels (int): Number of channels in the skip connection feature map.
+            gating_channels (int): Number of channels in the decoder feature map.
+            inter_channels (int): Number of intermediate channels for the attention mechanism.
+        """
+        super(EnhancedAttentionGate, self).__init__()
+        
+        # Spatial attention components (from your original implementation)
+        self.W_skip = nn.Sequential(
+            nn.Conv2d(in_channels, inter_channels, kernel_size=1, stride=1, padding=0, bias=True),
+            nn.BatchNorm2d(inter_channels)
+        )
+        self.W_gating = nn.Sequential(
+            nn.Conv2d(gating_channels, inter_channels, kernel_size=1, stride=1, padding=0, bias=True),
+            nn.BatchNorm2d(inter_channels)
+        )
+        self.psi = nn.Sequential(
+            nn.ReLU(inplace=False),
+            nn.Conv2d(inter_channels, 1, kernel_size=1, stride=1, padding=0, bias=True),
+            nn.Sigmoid()
+        )
+        
+        # Channel attention component (new)
+        self.channel_gate = nn.Sequential(
+            nn.AdaptiveAvgPool2d(1),  # Global average pooling
+            nn.Conv2d(in_channels, in_channels // 4, kernel_size=1, bias=True),  # Dimension reduction
+            nn.ReLU(inplace=False),
+            nn.Conv2d(in_channels // 4, in_channels, kernel_size=1, bias=True),  # Dimension restoration
+            nn.Sigmoid()  # Scale each channel
+        )
+        
+        self.relu = nn.ReLU(inplace=False)
 
+    def forward(self, x, gating):
+        """
+        Forward pass of the Enhanced Attention Gate.
+        
+        Args:
+            x (torch.Tensor): Skip connection feature map (from encoder).
+            gating (torch.Tensor): Decoder feature map (lower-level features).
+        
+        Returns:
+            torch.Tensor: Skip connection features weighted by both spatial and channel attention.
+        """
+        # Spatial attention (from your original implementation)
+        g1 = self.W_gating(gating)
+        x1 = self.W_skip(x)
+        psi = self.relu(g1 + x1)  # Combine gating and skip
+        spatial_attn = self.psi(psi)  # Generate spatial attention map
+        
+        # Channel attention (new)
+        channel_attn = self.channel_gate(x)  # Generate channel attention map
+        
+        # Combine both attention mechanisms
+        return x * spatial_attn * channel_attn
+    
 class DecoderBlockWithAttention(nn.Module):
     def __init__(self, in_channels, out_channels, skip_channels=0, use_attention=True, use_batchnorm=True):
         """
-        Decoder block with optional Attention Gate.
+        Decoder block with optional Enhanced Attention Gate.
 
         Args:
             in_channels (int): Number of input channels.
             out_channels (int): Number of output channels.
             skip_channels (int): Number of channels in the skip connection.
-            use_attention (bool): Whether to use Attention Gate in the decoder block.
+            use_attention (bool): Whether to use Enhanced Attention Gate in the decoder block.
             use_batchnorm (bool): Whether to use BatchNorm in convolution layers.
         """
         super(DecoderBlockWithAttention, self).__init__()
         self.use_attention = use_attention
         if self.use_attention and skip_channels > 0:
-            self.attention_gate = AttentionGate(skip_channels, in_channels, inter_channels=skip_channels // 2)
+            # Use the enhanced attention gate instead of the original
+            self.attention_gate = EnhancedAttentionGate(
+                skip_channels, in_channels, inter_channels=skip_channels // 2
+            )
 
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels + (skip_channels if not use_attention else 0), out_channels,
                       kernel_size=3, padding=1, bias=True),
             nn.BatchNorm2d(out_channels) if use_batchnorm else nn.Identity(),
-            nn.ReLU(inplace=False)  # Changed to inplace=False
+            nn.ReLU(inplace=False)
         )
         self.conv2 = nn.Sequential(
             nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1, bias=True),
             nn.BatchNorm2d(out_channels) if use_batchnorm else nn.Identity(),
-            nn.ReLU(inplace=False)  # Changed to inplace=False
+            nn.ReLU(inplace=False)
         )
         self.up = nn.UpsamplingBilinear2d(scale_factor=2)
 
@@ -94,7 +157,7 @@ class DecoderBlockWithAttention(nn.Module):
         x = self.up(x)
         if skip is not None:
             if self.use_attention:
-                skip = self.attention_gate(skip, x)  # Apply Attention Gate to skip connection
+                skip = self.attention_gate(skip, x)  # Apply Enhanced Attention Gate to skip connection
             x = torch.cat([x, skip], dim=1)
         x = self.conv1(x)
         x = self.conv2(x)
