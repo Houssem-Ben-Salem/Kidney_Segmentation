@@ -1,42 +1,52 @@
-# Kidney Tumor Segmentation using TransUNet with Attention Gate
+# Kidney Tumor Segmentation using TransUNet with Attention Gates
 
-This project implements kidney tumor segmentation using the **TransUNet** architecture enhanced with **Attention Gates** for improved segmentation performance. It utilizes the **KiTS19** dataset for training and testing. The implementation is designed for flexibility and includes features like attention visualization, checkpointing, and integration with **Weights & Biases (W&B)** for experiment tracking.
+This project implements an enhanced version of the TransUNet architecture for kidney tumor segmentation, incorporating Attention Gates for improved segmentation accuracy. The implementation is trained and evaluated on the KiTS19 (Kidney Tumor Segmentation) dataset, providing robust segmentation of kidneys and tumors from CT scans.
 
----
+## Key Features
 
-## Features
-
-- **TransUNet Architecture**: Combines transformer-based global attention with UNet's local feature extraction.
-- **Attention Gates**: Integrated into the architecture to focus on relevant regions in the input image, improving segmentation performance.
-- **KiTS19 Dataset Support**: Processes and trains on kidney and tumor segmentation dataset with background.
-- **W&B Integration**: Logs training metrics, attention maps, and segmentation outputs for better visualization and tracking.
-- **Checkpoints**: Supports saving and resuming from checkpoints (`latest_checkpoint.pth` and `best_model.pth`).
-- **Validation Metrics**: Validates every few iterations and logs validation loss and Dice score.
-
----
+- **Enhanced TransUNet Architecture**: Combines transformer-based global attention with UNet's local feature extraction capabilities
+- **Attention Gate Integration**: Focuses on relevant regions in the input image, improving boundary detection and segmentation performance
+- **Multi-loss Training**: Employs a combination of Cross-Entropy, Dice, Focal, and Boundary Loss for optimized training
+- **Advanced Visualization Tools**: Comprehensive tools for visualizing attention maps, error analysis, and boundary detection
+- **Weights & Biases Integration**: Full experiment tracking with metrics, attention maps, and segmentation outputs
+- **Extensive Analysis Framework**: Tools for error analysis, model comparison, and boundary accuracy assessment
+- **KiTS19 Dataset Support**: Complete pipeline for processing and training on the kidney tumor segmentation dataset
 
 ## Project Structure
 
 ```
 .
-├── data/                     # KiTS19 dataset (not included in repo)
-├── lists_kits19/             # Train/val/test file lists
-├── networks/
-│   ├── vit_seg_modeling.py   # TransUNet with Attention Gate
-│   ├── attention_gate.py     # Attention Gate implementation
-│   └── ...                   # Additional network components
-├── utils/
-│   └── utils.py              # Dice loss and other utilities
-├── datasets/
-│   └── dataset_kits19_list.py# Dataset loader for KiTS19
-├── TransUNet/
-│   ├── train.py              # Training script
-│   ├── trainer.py            # Training loop with validation
-│   └── ...                   # Other components
-└── README.md                 # Project documentation
+├── TransUNet/                        # Main project directory
+│   ├── datasets/                     # Dataset implementations
+│   │   ├── dataset_kits19_list.py    # KiTS19 dataset loader
+│   │   └── README.md                 # Dataset documentation
+│   ├── networks/                     # Network architecture modules
+│   │   ├── vit_seg_modeling.py       # TransUNet with Attention implementation
+│   │   ├── attention_gate.py         # Attention Gate implementation
+│   │   ├── vit_seg_configs.py        # Model configurations
+│   │   ├── vit_seg_modeling_resnet_skip.py # ResNet feature extraction
+│   │   └── visualization_utils.py    # Attention visualization utilities
+│   ├── utils/                        # Utility functions and tools
+│   │   └── utils.py                  # Dice loss and evaluation metrics
+│   ├── analysis.py                   # KiTS19 dataset analysis
+│   ├── attention_correlation.py      # Correlation between attention and segmentation
+│   ├── boundary_detection.py         # Boundary detection analysis
+│   ├── compare_models.py             # Model comparison framework
+│   ├── error_analysis.py             # Comprehensive error analysis
+│   ├── generate_kits19_lists.py      # Generate train/val/test splits
+│   ├── key_analysis_figures.py       # Create key analysis visualizations
+│   ├── model_test.py                 # Quick model testing utility
+│   ├── test.py                       # Dataset distribution testing
+│   ├── test-transunet.py             # Full model evaluation
+│   ├── train.py                      # Main training script
+│   ├── trainer.py                    # Training loop implementation
+│   ├── verify.py                     # Dataset verification
+│   └── visualize_attention_maps.py   # Attention map visualization
+├── ct_preprocessing_visualization.py # CT scan preprocessing visualization
+├── .gitignore                        # Git ignore file
+├── README.md                         # Project documentation
+└── requirements.txt                  # Dependencies
 ```
-
----
 
 ## Installation
 
@@ -46,158 +56,172 @@ This project implements kidney tumor segmentation using the **TransUNet** archit
 - CUDA-enabled GPU with drivers
 - Virtual environment (optional but recommended)
 
-### Dependencies
+### Setup
 
-Install dependencies with:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/kidney-tumor-segmentation.git
+   cd kidney-tumor-segmentation
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+2. Create and activate a virtual environment (optional but recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Dependencies include:
-- PyTorch
-- torchvision
-- tqdm
-- numpy
-- nibabel
-- scikit-learn
-- wandb
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
----
+4. Download the pre-trained ViT weights:
+   ```bash
+   mkdir -p TransUNet/model/vit_checkpoint/imagenet21k
+   wget https://storage.googleapis.com/vit_models/imagenet21k/R50+ViT-B_16.npz -O TransUNet/model/vit_checkpoint/imagenet21k/R50+ViT-B_16.npz
+   ```
+
+### Dataset Setup
+
+1. Download the KiTS19 dataset from the [official website](https://kits19.grand-challenge.org/)
+2. Extract it to the `kits19/data` directory with the following structure:
+   ```
+   kits19/data/
+   ├── case_00000/
+   │   ├── imaging.nii.gz
+   │   └── segmentation.nii.gz
+   ├── case_00001/
+   ...
+   ```
+3. Generate train/val/test splits:
+   ```bash
+   python TransUNet/generate_kits19_lists.py
+   ```
 
 ## Usage
 
-### 1. Dataset Setup
+### Data Analysis and Preprocessing
 
-1. Download the KiTS19 dataset from the official website: [KiTS19 Challenge](https://kits19.grand-challenge.org/).
-2. Extract it to the `data/` directory.
-
-Ensure the structure is as follows:
-```
-data/
-├── case_00000/
-│   ├── imaging.nii.gz
-│   └── segmentation.nii.gz
-...
-```
-
-### 2. Generate Train/Val/Test Splits
-
-Run the script to create splits:
+Analyze the dataset distribution:
 ```bash
-python generate_kits19_lists.py
+python TransUNet/analysis.py --root_path kits19/data
 ```
 
-This generates three files:
-- `train.txt`
-- `val.txt`
-- `test.txt`
-
-### 3. Training
-
-Run the training script:
+Visualize CT scan preprocessing techniques:
 ```bash
-python train.py \
-    --root_path data \
+python ct_preprocessing_visualization.py --input sample_cases.txt --data_dir kits19/data --output_dir preprocessing_visualizations
+```
+
+### Training
+
+Train the model with attention gates:
+```bash
+python TransUNet/train.py \
+    --root_path kits19/data \
     --list_dir lists_kits19 \
-    --batch_size 8 \
+    --batch_size 16 \
     --img_size 224 \
-    --max_iterations 50000 \
-    --checkpoint_dir checkpoints \
-    --use_attention_gate 1 # 1 if you want to use the attention gare 0 otherwise
+    --max_iterations 30000 \
+    --vit_name R50-ViT-B_16 \
+    --use_attention 1 \
+    --checkpoint_dir checkpoints_with_attention
 ```
 
-### 4. Resuming Training
-
-To resume training, ensure `latest_checkpoint.pth` or `best_model.pth` exists in the `checkpoint_dir`. The script will automatically load the weights and optimizer state.
-
----
-
-## Visualizations
-
-The project uses **Weights & Biases** for tracking and visualizing:
-- Training/validation loss
-- Dice scores
-- Attention maps
-- Segmentation outputs (input image, prediction, ground truth)
-
-### Logging
-
-Login to W&B before running the script:
+To train without attention gates (for comparison):
 ```bash
-wandb login
+python TransUNet/train.py \
+    --root_path kits19/data \
+    --list_dir lists_kits19 \
+    --batch_size 16 \
+    --img_size 224 \
+    --max_iterations 30000 \
+    --vit_name R50-ViT-B_16 \
+    --use_attention 0 \
+    --checkpoint_dir checkpoints_without_attention
 ```
 
-Access visualizations from the W&B dashboard.
+To resume training from a checkpoint, the script will automatically load the latest checkpoint if it exists in the specified checkpoint directory.
 
----
+### Evaluation
 
-## Highlights of the Attention Gate
-
-The **Attention Gate** focuses the model's attention on the most relevant regions in the input images. This helps:
-- Filter irrelevant background noise.
-- Improve segmentation accuracy for small regions like tumors.
-
-Attention maps are logged to W&B for interpretability.
-
----
-
-## Example Logs
-
-During training, you’ll see outputs like:
-
-```
-Iteration 1000: Loss 0.5632
-Validation: Iteration 2000, Val Loss: 0.4301, Val Dice: 0.8763
-Saved latest checkpoint at checkpoints/latest_checkpoint.pth
-New best model saved at checkpoints/best_model.pth with Dice 0.8763
+Evaluate the model:
+```bash
+python TransUNet/test-transunet.py \
+    --root_path kits19/data \
+    --list_dir lists_kits19 \
+    --model_path checkpoints_with_attention/best_model.pth \
+    --vit_name R50-ViT-B_16 \
+    --use_attention 1 \
+    --output_dir test_results
 ```
 
----
+### Analysis and Visualization
 
-## Results
+Visualize attention maps:
+```bash
+python TransUNet/visualize_attention_maps.py \
+    --root_path kits19/data \
+    --model_path checkpoints_with_attention/best_model.pth \
+    --vit_name R50-ViT-B_16 \
+    --case_id 00086 \
+    --output_dir attention_visualizations
+```
 
-### Quantitative Results
-Dice scores are tracked during validation and can be compared for different configurations (e.g., with/without attention gates).
+Perform error analysis:
+```bash
+python TransUNet/error_analysis.py \
+    --root_path kits19/data \
+    --list_dir lists_kits19 \
+    --model_path checkpoints_with_attention/best_model.pth \
+    --vit_name R50-ViT-B_16 \
+    --use_attention 1 \
+    --output_dir error_analysis_results
+```
 
-### Qualitative Results
-Segmentation outputs and attention maps are logged to W&B for qualitative comparison.
+Analyze boundary detection:
+```bash
+python TransUNet/boundary_detection.py \
+    --root_path kits19/data \
+    --model_path checkpoints_with_attention/best_model.pth \
+    --case_id 00086 \
+    --output_dir boundary_analysis_results
+```
 
----
+Compare models with and without attention:
+```bash
+python TransUNet/compare_models.py \
+    --root_path kits19/data \
+    --list_dir lists_kits19 \
+    --model1_path checkpoints_with_attention/best_model.pth \
+    --model2_path checkpoints_without_attention/best_model.pth \
+    --vit_name R50-ViT-B_16 \
+    --output_dir model_comparison
+```
 
-## Contributions
+## Results and Visualizations
 
-- **Attention Gate**: Enhances the vanilla TransUNet architecture.
-- **Training Features**: Robust logging, validation, and checkpointing.
-- **Visualization**: Integrated attention and segmentation outputs with W&B.
+### Performance Metrics
 
----
+<img src="IOU.png" alt="Attention Maps" width="800"/>
 
-## Future Work
+### Attention Maps
 
-- Extend to multi-class segmentation tasks.
-- Evaluate on other medical imaging datasets.
-- Explore lightweight models for real-time inference.
+The integration of attention gates significantly improves the model's focus on relevant regions, particularly for tumor boundaries:
 
----
+<img src="attention_results/attention_vis_case00086_20250323_010504/attention_maps/attention_case00086_slice290.png" alt="Attention Maps" width="800"/>
+
+### Boundary Detection
+
+Analysis of boundary detection accuracy demonstrates the effectiveness of attention mechanism for precise tumor boundary segmentation:
+
+<img src="boundary_results/boundary_analysis_00086_20250323_012732/boundary_case_00086_slice_392.png" alt="Boundary Detection" width="800"/>
 
 ## Acknowledgments
 
-- **KiTS19 Dataset**: Kidney Tumor Segmentation Challenge.
-- **TransUNet**: Transformer-based UNet architecture.
-
----
+- [KiTS19 Challenge](https://kits19.grand-challenge.org/) for providing the dataset
+- [TransUNet](https://github.com/Beckschen/TransUNet) for the base implementation of the TransUNet architecture
+- [Vision Transformer](https://github.com/google-research/vision_transformer) for the ViT implementation
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE` for more details.
-
-### Highlights:
-1. **Clear Sections**:
-   - Features, installation, and usage are neatly categorized.
-2. **Usage Instructions**:
-   - Covers dataset setup, split generation, and training.
-3. **Visualization**:
-   - Explains the integration with W&B for easy experiment tracking.
-4. **Effectiveness of Attention Gate**:
-   - Briefly explains the improvement it adds to the architecture.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](TransUNet/LICENSE) file for details.
