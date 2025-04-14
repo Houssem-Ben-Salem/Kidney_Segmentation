@@ -1,0 +1,47 @@
+[2025-03-23 05:07:39,804] Starting TransUNet comprehensive error analysis at 20250323_050739
+[2025-03-23 05:07:39,804] Arguments: Namespace(root_path='kits19/data', list_dir='./lists_kits19_1', output_dir='./analysis_results', model_path='Checkpoint_with_attention_gate_batch_32_bouandry_loss/best_model.pth', num_classes=3, img_size=224, n_skip=3, vit_name='R50-ViT-B_16', use_attention=1, vit_patches_size=16, test_percentage=100.0)
+[2025-03-23 05:07:41,429] Model loaded successfully with patched forward method
+[2025-03-23 05:07:41,445] Using 7680 samples out of 7680 (100.0% of test set)
+[2025-03-23 05:07:41,445] Starting inference and analysis...
+[2025-03-23 07:37:42,039] Processing analysis results...
+[2025-03-23 07:37:42,301] Raw data saved to CSV files
+[2025-03-23 07:37:43,238] Summary visualizations created
+[2025-03-23 07:37:43,263] 
+Size-dependent Performance:
+[2025-03-23 07:37:43,264]             tumor_dice                 tumor_hd95                 tumor_asd                
+                  mean       std count       mean       std count      mean       std count
+gt_category                                                                                
+large         0.955185  0.023584   262   2.686895  1.559970   262  0.822306  0.268169   262
+medium        0.901256  0.048427   368   2.521582  1.690785   368  0.876088  0.458855   368
+none          0.862195  0.344720  6814  -0.137805  0.344720  6814 -0.137805  0.344720  6814
+small         0.565268  0.322319   236   2.147247  2.607539   236  0.791784  1.029677   236
+[2025-03-23 07:37:43,299] 
+Kidney Boundary Analysis:
+[2025-03-23 07:37:43,310]        gt_to_pred_mean  gt_to_pred_std  gt_to_pred_max  pred_to_gt_mean  pred_to_gt_std  pred_to_gt_max  gt_boundary_length  pred_boundary_length    slice_idx
+count      2599.000000     2599.000000     2599.000000      2599.000000     2599.000000     2599.000000         2599.000000           2599.000000  2599.000000
+mean          0.743148        0.809515        3.175292         1.020724        1.259988        5.253626          142.525972            124.791073   255.285110
+std           1.159808        0.873984        3.420528         1.164279        1.272308        5.024193           84.331287             70.807396    94.468893
+min           0.081633        0.000000        1.000000         0.117647        0.000000        1.000000            1.000000              1.000000    94.000000
+25%           0.426279        0.501651        1.414214         0.531332        0.557721        2.000000           84.000000             79.000000   168.000000
+50%           0.566203        0.596591        2.000000         0.741870        0.753139        3.162278          123.000000            110.000000   225.000000
+75%           0.782573        0.807608        3.605551         1.111555        1.404830        7.000000          183.000000            149.000000   344.000000
+max          29.519516       17.296311       48.041649        29.519516       21.038966       57.070132          419.000000            370.000000   431.000000
+[2025-03-23 07:37:43,331] 
+Tumor Boundary Analysis:
+[2025-03-23 07:37:43,341]        gt_to_pred_mean  gt_to_pred_std  gt_to_pred_max  pred_to_gt_mean  pred_to_gt_std  pred_to_gt_max  gt_boundary_length  pred_boundary_length   slice_idx
+count       827.000000      827.000000      827.000000       827.000000      827.000000      827.000000          827.000000            827.000000  827.000000
+mean          0.923465        0.798761        2.985826         1.037068        0.901321        3.608925          102.137848             90.883918  319.548972
+std           0.502423        0.400990        1.549883         0.759708        0.672780        2.613031           68.994107             59.103972   96.345793
+min           0.000000        0.000000        0.000000         0.300790        0.195262        1.000000            3.000000              1.000000  120.000000
+25%           0.632911        0.593173        2.000000         0.707027        0.619040        2.236068           42.500000             38.000000  295.500000
+50%           0.800245        0.694207        2.828427         0.891062        0.731414        2.828427           83.000000             73.000000  346.000000
+75%           1.065770        0.873379        3.605551         1.151217        0.979185        4.123106          161.000000            137.000000  391.000000
+max           5.064352        5.828462       17.000000        13.231946       11.854982       27.018512          293.000000            239.000000  464.000000
+[2025-03-23 07:37:43,367] 
+Computational Efficiency:
+[2025-03-23 07:37:43,367] Mean inference time: 20.73 ms
+[2025-03-23 07:37:43,367] Mean memory usage: 0.01 MB
+[2025-03-23 07:37:43,369] Tumor slices mean time: 20.73 ms
+[2025-03-23 07:37:43,369] Non-tumor slices mean time: 20.72 ms
+[2025-03-23 07:37:43,422] Comprehensive report saved to ./analysis_results/error_analysis_20250323_050739/comprehensive_report.md
+[2025-03-23 07:37:43,422] Analysis complete. Results saved to: ./analysis_results/error_analysis_20250323_050739

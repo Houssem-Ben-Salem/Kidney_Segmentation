@@ -119,7 +119,7 @@ def save_verification_results(valid_slices, problematic_files, output_dir="verif
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--list_dir', type=str, default='./lists_kits19',
+    parser.add_argument('--list_dir', type=str, default='./lists_kits19_1',
                       help='directory containing test list')
     parser.add_argument('--root_path', type=str, default='kits19/data',
                       help='root directory for data')

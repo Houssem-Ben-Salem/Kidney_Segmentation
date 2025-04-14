@@ -15,3 +15,4 @@ filtred/
 test_results/
 verification_results/
 wandb/
+Checkpoint_with_attention_gate_batch_32_bouandry_loss/

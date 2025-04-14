@@ -181,10 +181,10 @@ def generate_slices_list(cases, filename, data_dir, analyzer, split_name, roi_on
     return len(slices_list)
 
 def main():
-    random.seed(42)
+    random.seed(1234)
     
     data_dir = "kits19/data"
-    lists_dir = "./lists_kits19"
+    lists_dir = "./lists_kits19_1"
     os.makedirs(lists_dir, exist_ok=True)
     
     # Get and shuffle cases

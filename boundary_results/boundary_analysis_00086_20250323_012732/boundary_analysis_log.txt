@@ -1,0 +1,20 @@
+[01:27:32.536] Initializing model...
+[01:27:33.943] Loading model weights from: Checkpoint_with_attention_gate_batch_32_bouandry_loss/best_model.pth
+[01:27:34.161] Loading case 00086 data...
+[01:27:36.311] Found 241 slices with kidney or tumor
+[01:27:36.311] Processing slices and collecting boundary metrics...
+[01:27:49.948] Finding challenging boundary cases...
+[01:27:49.948] Found 5 challenging boundary cases
+[01:27:49.948] Creating visualization for challenging case 1: Slice 395
+[01:27:52.744] Saved visualization to ./boundary_results/boundary_analysis_00086_20250323_012732/boundary_case_00086_slice_395.png
+[01:27:52.744] Creating visualization for challenging case 2: Slice 392
+[01:27:55.526] Saved visualization to ./boundary_results/boundary_analysis_00086_20250323_012732/boundary_case_00086_slice_392.png
+[01:27:55.526] Creating visualization for challenging case 3: Slice 396
+[01:27:58.687] Saved visualization to ./boundary_results/boundary_analysis_00086_20250323_012732/boundary_case_00086_slice_396.png
+[01:27:58.687] Creating visualization for challenging case 4: Slice 405
+[01:28:01.602] Saved visualization to ./boundary_results/boundary_analysis_00086_20250323_012732/boundary_case_00086_slice_405.png
+[01:28:01.602] Creating visualization for challenging case 5: Slice 404
+[01:28:04.500] Saved visualization to ./boundary_results/boundary_analysis_00086_20250323_012732/boundary_case_00086_slice_404.png
+[01:28:04.500] Creating boundary metrics comparison figure...
+[01:28:07.741] Saved comparison figure to ./boundary_results/boundary_analysis_00086_20250323_012732/boundary_metrics_case_00086.png
+[01:28:07.741] Analysis complete. Results saved to ./boundary_results/boundary_analysis_00086_20250323_012732

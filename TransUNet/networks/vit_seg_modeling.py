@@ -302,7 +302,6 @@ class DecoderBlockWithAttention(nn.Module):
         )
 
         # Compute the adjusted input channels for conv1
-        # After attention gating, skip_channels are already handled
         adjusted_in_channels = in_channels + skip_channels
 
         # Convolution layers
@@ -318,7 +317,7 @@ class DecoderBlockWithAttention(nn.Module):
         )
         self.up = nn.UpsamplingBilinear2d(scale_factor=2)
 
-    def forward(self, x, skip=None):
+    def forward(self, x, skip=None, return_attn=False):
         # Upsample the input
         x = self.up(x)
 
@@ -326,15 +325,42 @@ class DecoderBlockWithAttention(nn.Module):
         if skip is not None and x.shape[-2:] != skip.shape[-2:]:
             x = F.interpolate(x, size=skip.shape[-2:], mode='bilinear', align_corners=True)
 
+        attention_map = None
+        
         # Apply attention gate to skip connection, if enabled
         if skip is not None:
-            if self.use_attention:
-                skip = self.attention_gate(skip, x)
+            if self.use_attention and self.attention_gate is not None:
+                # Modify AttentionGate to return both attended features and attention map
+                skip, attention_map = self.forward_attention(skip, x)
             x = torch.cat([x, skip], dim=1)  # Concatenate along the channel dimension
 
         x = self.conv1(x)
         x = self.conv2(x)
+        
+        if return_attn:
+            return x, attention_map
         return x
+        
+    def forward_attention(self, skip, x):
+        """
+        Forward the skip connection through the attention gate and return both
+        the attended features and the attention map.
+        """
+        if not hasattr(self, 'attention_gate') or self.attention_gate is None:
+            return skip, None
+            
+        # Get the input for attention computation
+        g1 = self.attention_gate.W_gating(x)
+        x1 = self.attention_gate.W_skip(skip)
+        psi = self.attention_gate.relu(g1 + x1)
+        
+        # Generate attention map
+        attention_map = self.attention_gate.psi(psi)
+        
+        # Apply attention to skip connection
+        attended_skip = skip * attention_map
+        
+        return attended_skip, attention_map
 
 class DecoderCupWithAttention(nn.Module):
     def __init__(self, config):
@@ -377,16 +403,17 @@ class DecoderCupWithAttention(nn.Module):
             ]
         )
 
-    def forward(self, hidden_states, features=None):
+    def forward(self, hidden_states, features=None, return_attn=False):
         """
         Forward pass for the decoder cup with optional attention gates.
         
         Args:
             hidden_states (torch.Tensor): Output from the transformer encoder.
             features (list[torch.Tensor], optional): Skip connections from the encoder.
+            return_attn (bool): Whether to return attention maps.
 
         Returns:
-            torch.Tensor: Final output from the decoder.
+            torch.Tensor or tuple: Final output from the decoder and optionally attention maps.
         """
         # Reshape transformer output to spatial dimensions
         B, n_patch, hidden = hidden_states.size()
@@ -394,10 +421,20 @@ class DecoderCupWithAttention(nn.Module):
         x = hidden_states.permute(0, 2, 1).contiguous().view(B, hidden, h, w)
         x = self.conv_more(x)
 
+        # Collect attention maps if requested
+        attention_maps = []
+        
         for i, decoder_block in enumerate(self.blocks):
             skip = features[i] if (features is not None and i < len(features)) else None
-            x = decoder_block(x, skip=skip)
-
+            
+            if return_attn and hasattr(decoder_block, 'attention_gate') and decoder_block.attention_gate is not None:
+                x, attn_map = decoder_block(x, skip=skip, return_attn=True)
+                attention_maps.append(attn_map)
+            else:
+                x = decoder_block(x, skip=skip)
+        
+        if return_attn:
+            return x, attention_maps
         return x
     
 class VisionTransformer(nn.Module):
@@ -406,8 +443,9 @@ class VisionTransformer(nn.Module):
         self.num_classes = num_classes
         self.zero_head = zero_head
         self.classifier = config.classifier
-        self.transformer = Transformer(config, img_size, vis)
-        self.decoder = DecoderCupWithAttention(config)  # Use DecoderCupWithAttention
+        # Always set vis=True to capture attention weights
+        self.transformer = Transformer(config, img_size, vis=True)
+        self.decoder = DecoderCupWithAttention(config)
         self.segmentation_head = SegmentationHead(
             in_channels=config['decoder_channels'][-1],
             out_channels=config['n_classes'],
@@ -418,13 +456,26 @@ class VisionTransformer(nn.Module):
     def forward(self, x, return_attn=False):
         if x.size()[1] == 1:
             x = x.repeat(1, 3, 1, 1)
+        
+        # Get transformer outputs and attention weights
         x, attn_weights, features = self.transformer(x)
-        x = self.decoder(x, features)
+        
+        # Collect decoder attention maps (modify DecoderCupWithAttention to return these)
+        x, decoder_attn_maps = self.decoder(x, features, return_attn=return_attn)
+        
+        # Generate segmentation output
         logits = self.segmentation_head(x)
+        
         if return_attn:
-            return logits, attn_weights
+            # Combine transformer attention and decoder attention maps
+            attention_maps = {
+                'transformer': attn_weights,
+                'decoder': decoder_attn_maps
+            }
+            return logits, attention_maps
+        
         return logits
-
+    
     def load_from(self, weights):
         with torch.no_grad():
 

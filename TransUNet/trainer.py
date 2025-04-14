@@ -96,8 +96,9 @@ class BoundaryLoss(nn.Module):
                     pred_softmax[:, class_idx:class_idx+1], self.sobel_y, padding=1
                 )
                 
-                # Normalize edge values to [0,1]
-                edge_pred = torch.sqrt(edge_x_pred**2 + edge_y_pred**2)
+                # Add epsilon inside the square root to prevent NaN gradients
+                edge_pred = torch.sqrt(edge_x_pred**2 + edge_y_pred**2 + 1e-8)
+                
                 if torch.max(edge_pred) > 0:  # Only normalize if non-zero
                     edge_pred = edge_pred / (torch.max(edge_pred) + 1e-8)
                 
@@ -109,7 +110,9 @@ class BoundaryLoss(nn.Module):
                     target_one_hot[:, class_idx:class_idx+1], self.sobel_y, padding=1
                 )
                 
-                edge_target = torch.sqrt(edge_x_target**2 + edge_y_target**2)
+                # Also add epsilon here for consistency
+                edge_target = torch.sqrt(edge_x_target**2 + edge_y_target**2 + 1e-8)
+                
                 if torch.max(edge_target) > 0:  # Only normalize if non-zero
                     edge_target = edge_target / (torch.max(edge_target) + 1e-8)
                 
